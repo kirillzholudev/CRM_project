@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 
 from .models import Userprofile
 
+
 def sign(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
