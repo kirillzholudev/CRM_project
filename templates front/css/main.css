@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: hsl(125, 25%, 81%);
+    background-color: #0D1B1E;
+  }
+  
+  /* Стили для Header */
+  .BigNavStyles {
+    border-bottom: 1px solid #e8e7ea;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  
+  .NavBar {
+    display: flex;
+  }
+  
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: #e8e7ea;
+  }
+  
+  .logo-wrapper img {
+    margin-right: 7px;
+  }
+  
+  .buttons_in {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+  }
+  
+  .buttons_in button {
+    border: none;
+    background: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #e8e7ea;
+    margin-right: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .buttons_in button:hover {
+    color: #0079bf;
+  }
+  
+  .buttons_in_group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .buttons_in_group a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: #e8e7ea;
+    margin-left: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .buttons_in_group a:hover {
+    color: #0D1B1E;
+    background-color: #d4ded5;
+  }
+  
+  .login {
+    border: 2px solid #d4ded5;
+    color: #d4ded5;
+  }
+  
+  .Sign {
+    background-color: #4965a2;
+    color: #fff;
+  }
+  
+  .leftUp {
+    text-align: left;
+    display: block;
+    flex: 0 0 auto;
+    width: 40%;
+    margin-bottom: 0px;
+    padding-bottom: 8rem;
+  }
+  
+  .leftUp {
+    padding: 8em 1rem 1rem;
+    position: relative;
+    scroll-margin-top: 72px;
+    margin-top: 0px;
+  }
+  
+  h1 {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 1.25;
+    margin-bottom: 0.5em;
+    margin-top: 0px;
+    color: #fff;
+  }
+  
+  p {
+    color: #fff;
+  }
+  /* page */
+  .item {
+          width: 50px;
+          height: 50px;
+          background-color: hsl(125, 25%, 81%);
+          margin-right: 10px;
+          transition: .3s;
+          border-radius: 15px;
+      }
+  
+      .container {
+          display: flex;
+          justify-content:right;
+          align-items: center;
+          margin: 1em;
+      }
+      
+      .container:hover > :not(:hover) {
+          opacity: .4;
+      }
+  
+      .item:hover {
+          box-shadow: 5px 5px 56px -14px #25b384;
+          /* transform: rotate(45deg); */
+          transform: scale(1.2);
+      }
