@@ -2,13 +2,21 @@
 
 {% block title %} Sing up{% endblock %}
 
+
 {% block content %}
     <h1 class="text-xl">Log in page</h1>
           <form method="post" action="">
               {% csrf_token %}
 
-              {{ form.as_p }}
+              {{ form.username }}
+              {{ form.password }}
 
               <button class="py-4 px-8 bg-teal-600 text-white rounded-xl">Submit</button>
           </form>
 {% endblock %}
+
+
+{% block styles %}
+    <link rel="stylesheet" href="/static/css/login.css">
+{% endblock %}
+
