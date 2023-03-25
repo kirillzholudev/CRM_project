@@ -33,17 +33,13 @@
         </div>
       </div>
     </header>
-    <div class="container">
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-  </div>
+
+        {% block container %}{% endblock %}
 
         {% block content %}
           {% endblock %}
 
   </div>
+    <script src="/static/js/logo.js"></script>
 </body>
 </html>
