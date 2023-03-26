@@ -9,6 +9,7 @@
     font-size: 16px;
     color: hsl(125, 25%, 81%);
     background-color: #0D1B1E;
+    overflow: hidden;
   }
   
   /* Стили для Header */

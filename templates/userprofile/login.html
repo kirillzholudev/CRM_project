@@ -2,24 +2,43 @@
 
 {% block title %} Sing up{% endblock %}
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 
-{% block content %}
-      <form method="post" action="">
-          {% csrf_token %}
-
-          {{ form.username }}
-          {{ form.password }}
-
-          <button class="submit">Submit</button>
-      </form>
-        <script src="/static/js/login.js"></script>
-
-{% endblock %}
-
-
-{% block styles %}
+    {% block content %}
+ <head>
     <link rel="stylesheet" href="/static/css/login.css">
+ </head>
+<body>
+    <div class="main_cont">
+    <div class="container_log">
+        <h1>Login</h1>
+        <form method="post" action="">
+            <div class="form-control">
+                <input type="text" required />
+                <label><span>Your Email</span></label>
+            </div>
+            <div class="form-control">
+                <input type="password" required />
+                <label><span>Your Password</span></label>
+            </div>
+            <button class="submit">Submit</button>
+            <p class="text">Don't have an account?
+              <a href="#">Create Account</a></p>
+        </form>
+    </div>
+    </div>
+    <script>
+        const label = document.querySelectorAll(".form-control label");
+        
+            label.forEach((label) => {
+              label.innerHTML = label.innerText
+                .split("")
+                .map(
+                  (letter, idx) =>
+                  `<span style="transition-delay:${idx * 4}ms">${letter}</span>`
+            )
+               .join("");
+            });
+    </script>
+</body>
 {% endblock %}
-

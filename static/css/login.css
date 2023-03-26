@@ -1,56 +1,111 @@
-#id_username, #id_password {
-    padding: 10px;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px;
-    font-size: 16px;
-    width: 100%;
+* {
     box-sizing: border-box;
 }
 
-
-
-form {
-    max-width: 500px;
-    margin: 80px auto;
-    text-align: center;
+.main_cont {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #0D1B1E;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
 }
 
-button.submit {
-    margin-top: 20px;
-    background-color: hsl(125, 25%, 81%);
-    color: #555;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
+.container_log {
+    background-color: #393e467d;
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+.main_cont .container_log h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container_log a {
+    text-decoration: none;
+    color: lightblue;
+}
+
+.container_log a:hover {
+    color: rgb(162, 218, 237);
+    text-decoration: underline;
+}
+
+.submit {
     cursor: pointer;
-    box-shadow: 0px 3px 0px 0px #bfbfbf;
-    transition: box-shadow 0.3s ease-in-out;
-    width: 50%;
-    height: 50%;
+    display: inline-block;
+    width: 100%;
+    background: lightblue;
+    padding: 15px; /* Задаем отступы для внутреннего контента внутри .btn */
+    font-family: inherit;
+    font-size: 26px;
+    border: 0;
+    border-radius: 5px;
+}
+
+/* Убираем контур при фокусе на .btn */
+.submit:focus {
+    outline: 0;
+}
+
+/* Уменьшаем масштаб элемента на 2% при активации .btn */
+.submit:active {
+    transform: scale(0.98);
 }
 
 .submit:hover {
-    box-shadow: 5px 5px 56px -14px #25b384;
-    transform: scale(1.2);
-    background-color: #4965a2;
+    background-color: rgb(150, 190, 203);
+}
+
+.text {
+    margin-top: 30px;
+}
+
+.form-control {
+    position: relative;  /* Устанавливаем позиционирование элемента в контексте родительского элемента */
+    margin: 20px 0 40px;
+    width: 300px;
+}
+
+.form-control input {
+    background-color: transparent; /* Убираем фоновый цвет для элемента ввода */
+    border: 0;
+    border-bottom: 2px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
     color: #fff;
 }
 
-button.submit {
-    animation: pulse 3s infinite;
-    position: relative;
-    transform: translateX(-50%);
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0; /* Убираем рамку при фокусе на поле ввода */
+    border-bottom-color: lightblue;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+.form-control label {
+    position: absolute;  /* Устанавливаем позиционирование метки в контексте родительского элемента */
+    top: 15px;
+    left: 0;
+    pointer-events: none; /* Отключаем возможность взаимодействия с меткой */
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Задаем анимацию для перехода между состояниями */
+}
+
+/* Активное состояние для поля ввода */
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    color: lightblue;
+    transform: translateY(-30px);
 }
