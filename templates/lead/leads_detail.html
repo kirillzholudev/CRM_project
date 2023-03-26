@@ -1,0 +1,30 @@
+{% extends 'core/view/main.html' %}
+
+{% block title %}Leads{% endblock %}
+
+{% block content %}
+    <div class="py-6 px-6">
+        <h1 class="mb-6 text-xl">{{ lead.name }}</h1>
+
+        {% if lead.descriptions %}
+            <p class="font-semibold">Name</p>
+            <p>{{ lead.descriptions }}</p>
+        {% endif %}
+
+        <p class="font-semibold">Status</p>
+        <p>{{ lead.get_status_display }}</p>
+
+        <p class="font-semibold">Priority</p>
+        <p>{{ lead.get_priority_display }}</p>
+
+        <p class="font-semibold">Created at</p>
+        <p>{{ lead.created_at }}</p>
+
+        <p class="font-semibold">Modified at</p>
+        <p>{{ lead.modified_at }}</p>
+
+        <a href="{% url 'leads_list' %}" class="inline-block py-4 px-6 bg-teal-600 rounded-xl text-white">Back to leads</a>
+
+    </div>
+
+{% endblock %}
