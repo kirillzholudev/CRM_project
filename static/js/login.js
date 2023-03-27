@@ -1,9 +1,11 @@
-let formFields = document.querySelectorAll('#id_username, #id_password');
-formFields.forEach(field => {
-  field.addEventListener('focus', function() {
-    this.style.transform = 'scale(1.1)';
-  });
-  field.addEventListener('blur', function() {
-    this.style.transform = 'scale(1)';
-  });
+const label = document.querySelectorAll(".form-control label");
+    
+label.forEach((label) => {
+  label.innerHTML = label.innerText
+    .split("")
+    .map(
+      (letter, idx) =>
+      `<span style="transition-delay:${idx * 4}ms">${letter}</span>`
+)
+   .join("");
 });
