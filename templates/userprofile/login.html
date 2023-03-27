@@ -14,16 +14,16 @@
     <div class="container_log">
         <h1>Login</h1>
         <form method="post" action="">
+            {% csrf_token %}
             <div class="form-control">
-                <input type="text" required />
+                {{ form.username }}
                 <label><span>Your Email</span></label>
             </div>
             <div class="form-control">
-                <input type="password" required />
+                {{ form.password }}
                 <label><span>Your Password</span></label>
             </div>
 
-            {% csrf_token %}
             
             <button class="py-4 px-8 bg-teal-600 text-white rounded-xl submit">Submit</button>
             <p class="text">Don't have an account?
