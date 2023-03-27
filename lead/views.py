@@ -22,6 +22,12 @@ def leads_detail(request, pk):
 		'lead': lead
 	})
 
+@login_required
+def leads_delete(request, pk):
+	lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
+	lead.delete()
+
+	return redirect('leads_list')
 
 @login_required
 def add_lead(request):
