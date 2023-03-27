@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 .main_cont {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #0D1B1E;
@@ -32,8 +33,8 @@
 }
 
 .container_log a:hover {
-    color: rgb(162, 218, 237);
-    text-decoration: underline;
+    color: rgb(184, 231, 247);
+    transition: 0.2s all ease;
 }
 
 .submit {
@@ -90,6 +91,11 @@
     border-bottom-color: lightblue;
 }
 
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #232C31 inset !important;
+    -webkit-text-fill-color: #fff !important;
+}
+
 .form-control label {
     position: absolute;
     top: 15px;
@@ -107,6 +113,11 @@
 
 .form-control input:focus + label span,
 .form-control input:valid + label span {
+    color: lightblue;
+    transform: translateY(-30px);
+}
+
+input:-webkit-autofill + label span {
     color: lightblue;
     transform: translateY(-30px);
 }
