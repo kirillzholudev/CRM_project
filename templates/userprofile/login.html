@@ -16,11 +16,11 @@
         <form method="post" action="">
             {% csrf_token %}
             <div class="form-control">
-                {{ form.username }}
+                <input type="text" name="username" id="id_username" autocomplete="off">
                 <label><span>Your Email</span></label>
             </div>
             <div class="form-control">
-                {{ form.password }}
+                <input type="password" name="password" id="id_password" autocomplete="off">
                 <label><span>Your Password</span></label>
             </div>
 
