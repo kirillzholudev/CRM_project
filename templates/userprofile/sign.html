@@ -7,24 +7,22 @@
 
 <div class="reg_main_cont">
 <div class="reg_container_log">
-    <form method="post" action="">
-
+    <form method="post" action="{% url 'sign' %}">
         {% csrf_token %}
-
         <h1>Registration</h1>
         <div class="reg_form-control">
-            <input type="text" name="username" id="username" required>
-            <label for="username">Username</label>
+            {{ form.username }}
+            <label for="{{ form.username.id_for_label }}"><span>Username</span></label>
         </div>
         <div class="reg_form-control">
-            <input type="password" name="password" id="password" required>
-            <label for="password">Password</label>
+            {{ form.password1 }}
+            <label for="{{ form.password1.id_for_label }}"><span>Password</span></label>
         </div>
         <div class="reg_form-control">
-            <input type="password" name="confirm_password" id="confirm_password" required>
-            <label for="confirm_password">Confirm Password</label>
+            {{ form.password2 }}
+            <label for="{{ form.password2.id_for_label }}"><span>Confirm Password</span></label>
         </div>
-        <button class="py-4 px-8 bg-teal-600 text-white rounded-xl reg_submit">Submit</button>
+        <button class="py-4 px-8 bg-teal-600 text-white rounded-xl reg_submit" type="submit">Submit</button>
     </form>
     <div class="reg_text">
         <a href="{% url 'login' %}">Already registered? Log in</a>
