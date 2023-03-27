@@ -1,14 +1,34 @@
-{% extends 'core/view/main.html' %}
+{% extends 'userprofile/login.html' %}
 
 {% block title %} Sing up{% endblock %}
 
 {% block content %}
-    <h1 class="text-xl">Sign up page</h1>
-          <form method="post" action="">
-              {% csrf_token %}
+<link rel="stylesheet" href="/static/css/sigup.css">
 
-              {{ form.as_p }}
+<div class="reg_main_cont">
+<div class="reg_container_log">
+    <form method="post" action="">
 
-              <button class="py-4 px-8 bg-teal-600 text-white rounded-xl">Submit</button>
-          </form>
+        {% csrf_token %}
+
+        <h1>Registration</h1>
+        <div class="reg_form-control">
+            <input type="text" name="username" id="username" required>
+            <label for="username">Username</label>
+        </div>
+        <div class="reg_form-control">
+            <input type="password" name="password" id="password" required>
+            <label for="password">Password</label>
+        </div>
+        <div class="reg_form-control">
+            <input type="password" name="confirm_password" id="confirm_password" required>
+            <label for="confirm_password">Confirm Password</label>
+        </div>
+        <button class="py-4 px-8 bg-teal-600 text-white rounded-xl reg_submit">Submit</button>
+    </form>
+    <div class="reg_text">
+        <a href="{% url 'login' %}">Already registered? Log in</a>
+    </div>
+</div>
+</div>
 {% endblock %}
