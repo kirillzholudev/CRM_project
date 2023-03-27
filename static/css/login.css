@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 70vh;
     overflow: hidden;
     margin: 0;
 }
@@ -41,25 +41,26 @@
     display: inline-block;
     width: 100%;
     background: lightblue;
-    padding: 15px; /* Задаем отступы для внутреннего контента внутри .btn */
+    padding: 15px;
     font-family: inherit;
     font-size: 26px;
     border: 0;
     border-radius: 5px;
 }
 
-/* Убираем контур при фокусе на .btn */
+
 .submit:focus {
     outline: 0;
 }
 
-/* Уменьшаем масштаб элемента на 2% при активации .btn */
+
 .submit:active {
     transform: scale(0.98);
 }
 
 .submit:hover {
     background-color: rgb(150, 190, 203);
+    transition: all 0.3s ease;
 }
 
 .text {
@@ -67,13 +68,13 @@
 }
 
 .form-control {
-    position: relative;  /* Устанавливаем позиционирование элемента в контексте родительского элемента */
+    position: relative;
     margin: 20px 0 40px;
     width: 300px;
 }
 
 .form-control input {
-    background-color: transparent; /* Убираем фоновый цвет для элемента ввода */
+    background-color: transparent;
     border: 0;
     border-bottom: 2px #fff solid;
     display: block;
@@ -85,25 +86,25 @@
 
 .form-control input:focus,
 .form-control input:valid {
-    outline: 0; /* Убираем рамку при фокусе на поле ввода */
+    outline: 0;
     border-bottom-color: lightblue;
 }
 
 .form-control label {
-    position: absolute;  /* Устанавливаем позиционирование метки в контексте родительского элемента */
+    position: absolute;
     top: 15px;
     left: 0;
-    pointer-events: none; /* Отключаем возможность взаимодействия с меткой */
+    pointer-events: none;
 }
 
 .form-control label span {
     display: inline-block;
     font-size: 18px;
     min-width: 5px;
-    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Задаем анимацию для перехода между состояниями */
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Активное состояние для поля ввода */
+
 .form-control input:focus + label span,
 .form-control input:valid + label span {
     color: lightblue;
