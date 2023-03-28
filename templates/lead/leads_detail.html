@@ -1,4 +1,4 @@
-{% extends 'core/view/main.html' %}
+{% extends 'core/view/main_page.html' %}
 
 {% block title %}Leads{% endblock %}
 
@@ -23,13 +23,14 @@
         <p class="font-semibold">Modified at</p>
         <p>{{ lead.modified_at }}</p>
 
-        <hr>
+        <hr class="my-4">
 
-        <a href="{% url 'leads_delete' lead.id %}" class="inline-block py-4 px-6 bg-teal-600 rounded-xl text-white">Delete</a>
+        <a href="{% url 'edit_lead' lead.id %}">Edit</a>
+        <a href="{% url 'leads_delete' lead.id %}">Delete</a>
 
-        <hr>
+        <hr class="my-4">
 
-        <a href="{% url 'leads_list' %}" class="inline-block py-4 px-6 bg-teal-600 rounded-xl text-white">Back to leads</a>
+        <a href="{% url 'leads_list' %}">Back to leads</a>
 
     </div>
 

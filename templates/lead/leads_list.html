@@ -1,4 +1,4 @@
-{% extends 'core/view/main.html' %}
+{% extends 'core/view/main_page.html' %}
 
 {% block title %}Leads{% endblock %}
 
@@ -8,20 +8,24 @@
 
         <a href="{% url 'add_lead' %}" class="inline-block py-4 px-6 bg-teal-600 rounded-xl text-white"> Add lead</a>
 
-        <div class="mt-6 flex justify-between">
-            <p class="py-4 px-2 bg-gray-200 font-semibold w-full">Name</p>
-            <p class="py-4 px-2 bg-gray-200 font-semibold w-full">Priority</p>
-            <p class="py-4 px-2 bg-gray-200 font-semibold w-full">Status</p>
-        </div>
-
-        {% for lead in leads %}
-            <div class="flex justify-between">
-                <p class="py-2 px-2 w-full {% cycle 'bg-gray-100' '' %}">
-                    <a href="{% url 'leads_detail' lead.id %}"> {{ lead.name }} </a>
-                </p>
-                <p class="py-2 px-2 w-full {% cycle 'bg-gray-100' '' %}">{{ lead.get_priority_display }}</p>
-                <p class="py-2 px-2 w-full {% cycle 'bg-gray-100' '' %}">{{ lead.get_status_display }}</p>
+        {% if leads %}
+            <div class="mt-6 flex justify-between">
+                <p class="11">Name</p>
+                <p class="11">Priority</p>
+                <p class="11">Status</p>
             </div>
-        {% endfor %}
+
+            {% for lead in leads %}
+                <div class="flex justify-between">
+                    <p class="py-2 px-2 w-full {% cycle 'bg-gray-100' '' %}">
+                        <a href="{% url 'leads_detail' lead.id %}"> {{ lead.name }} </a>
+                    </p>
+                    <p class="py-2 px-2 w-full {% cycle 'bg-gray-100' '' %}">{{ lead.get_priority_display }}</p>
+                    <p class="py-2 px-2 w-full {% cycle 'bg-gray-100' '' %}">{{ lead.get_status_display }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>There are not leads in the database yet...</p>
+        {% endif %}
     </div>
 {% endblock %}

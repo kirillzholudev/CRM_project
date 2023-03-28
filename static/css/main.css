@@ -128,20 +128,22 @@
           transition: .3s;
           border-radius: 15px;
       }
-  
+
       .container {
           display: flex;
           justify-content:right;
           align-items: center;
           margin: 1em;
       }
-      
+
       .container:hover > :not(:hover) {
           opacity: .4;
       }
-  
+
       .item:hover {
           box-shadow: 5px 5px 56px -14px #25b384;
           /* transform: rotate(45deg); */
           transform: scale(1.2);
       }
+
+      /* _________________________________________________________________________________ */
