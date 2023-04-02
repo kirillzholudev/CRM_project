@@ -1,0 +1,46 @@
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.btn {
+  border-radius: 0.25rem;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.btn-primary {
+  background-color: blue;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: gray;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: red;
+  color: #fff;
+}
+
+.btn-link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.lead-table {
+  margin: 0 auto;
+}
+
+.py-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

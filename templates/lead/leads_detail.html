@@ -1,36 +1,54 @@
 {% extends 'core/view/main_page.html' %}
 
-{% block title %}Leads{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="/static/css/lead_detail.css">
+{% endblock %}
+
+{% block title %}{% endblock %}
 
 {% block content %}
     <div class="py-6 px-6">
         <h1 class="mb-6 text-xl">{{ lead.name }}</h1>
 
-        {% if lead.descriptions %}
-            <p class="font-semibold">Name</p>
-            <p>{{ lead.descriptions }}</p>
-        {% endif %}
+        <table class="lead-table">
+            {% if lead.descriptions %}
+                <tr>
+                    <td class="font-semibold">Name</td>
+                    <td>{{ lead.descriptions }}</td>
+                </tr>
+            {% endif %}
 
-        <p class="font-semibold">Status</p>
-        <p>{{ lead.get_status_display }}</p>
+            <tr>
+                <td class="font-semibold">Status</td>
+                <td>{{ lead.get_status_display }}</td>
+            </tr>
 
-        <p class="font-semibold">Priority</p>
-        <p>{{ lead.get_priority_display }}</p>
+            <tr>
+                <td class="font-semibold">Priority</td>
+                <td>{{ lead.get_priority_display }}</td>
+            </tr>
 
-        <p class="font-semibold">Created at</p>
-        <p>{{ lead.created_at }}</p>
+            <tr>
+                <td class="font-semibold">Created at</td>
+                <td>{{ lead.created_at }}</td>
+            </tr>
 
-        <p class="font-semibold">Modified at</p>
-        <p>{{ lead.modified_at }}</p>
+            <tr>
+                <td class="font-semibold">Modified at</td>
+                <td>{{ lead.modified_at }}</td>
+            </tr>
+        </table>
 
         <hr class="my-4">
 
-        <a href="{% url 'edit_lead' lead.id %}">Edit</a>
-        <a href="{% url 'leads_delete' lead.id %}">Delete</a>
+        <a href="{% url 'leads_convert' lead.id %}" class="btn btn-primary">Convert to client</a>
+        <a href="{% url 'edit_lead' lead.id %}" class="btn btn-secondary">Edit</a>
+        <a href="{% url 'leads_delete' lead.id %}" class="btn btn-danger">Delete</a>
+
 
         <hr class="my-4">
 
-        <a href="{% url 'leads_list' %}">Back to leads</a>
+        <a href="{% url 'leads_list' %}" class="btn btn-link">Back to leads</a>
 
     </div>
 

@@ -2,30 +2,37 @@
 
 {% block title %}Leads{% endblock %}
 
-{% block content %}
-    <div class="py-6 px-6">
-        <h1 class="mb-6 text-xl">Leads</h1>
+{% block extra_css %}
+    <link rel="stylesheet" href="/static/css/lead_list.css">
+{% endblock %}
 
-        <a href="{% url 'add_lead' %}" class="inline-block py-4 px-6 bg-teal-600 rounded-xl text-white"> Add lead</a>
+{% block content %}
+    <div class="container mx-auto px-4 py-6">
+        <h1 class="mb-6 text-2xl text-white font-bold">Leads</h1>
+
+        <div class="flex justify-end mb-6">
+            <a href="{% url 'add_lead' %}" class="inline-block py-2 px-4 bg-blue-600 rounded text-white">Add lead</a>
+        </div>
 
         {% if leads %}
-            <div class="mt-6 flex justify-between">
-                <p class="11">Name</p>
-                <p class="11">Priority</p>
-                <p class="11">Status</p>
-            </div>
-
-            {% for lead in leads %}
-                <div class="flex justify-between">
-                    <p class="py-2 px-2 w-full {% cycle 'bg-gray-100' '' %}">
-                        <a href="{% url 'leads_detail' lead.id %}"> {{ lead.name }} </a>
-                    </p>
-                    <p class="py-2 px-2 w-full {% cycle 'bg-gray-100' '' %}">{{ lead.get_priority_display }}</p>
-                    <p class="py-2 px-2 w-full {% cycle 'bg-gray-100' '' %}">{{ lead.get_status_display }}</p>
+            <div class="table w-full">
+                <div class="table-row bg-gray-800 text-white font-bold">
+                    <p class="table-cell py-2 px-4">Name</p>
+                    <p class="table-cell py-2 px-4">Priority</p>
+                    <p class="table-cell py-2 px-4">Status</p>
                 </div>
-            {% endfor %}
+                {% for lead in leads %}
+                    <div class="table-row">
+                        <p class="table-cell py-2 px-4 {% cycle 'bg-gray-100' '' %}">
+                            <a href="{% url 'leads_detail' lead.id %}" class="text-blue-600 hover:underline">{{ lead.name }}</a>
+                        </p>
+                        <p class="table-cell py-2 px-4 {% cycle 'bg-gray-100' '' %}">{{ lead.get_priority_display }}</p>
+                        <p class="table-cell py-2 px-4 {% cycle 'bg-gray-100' '' %}">{{ lead.get_status_display }}</p>
+                    </div>
+                {% endfor %}
+            </div>
         {% else %}
-            <p>There are not leads in the database yet...</p>
+            <p class="text-white">There are not leads in the database yet...</p>
         {% endif %}
     </div>
 {% endblock %}
