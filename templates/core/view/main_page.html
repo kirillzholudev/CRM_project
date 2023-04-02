@@ -11,31 +11,45 @@
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
 </head>
 <body>
-  <div class="app-root">
     <header class="BigNavStyles">
-      <div class="header"> 
-        <div class="NavBar">
-         <a class="logo-wrapper" href="/">
-            <img class="logo-wrapper" src="/static/img/semicircle.png" width="70px">
-            CRM system
-         </a>
+      <div class="global-navigation w-nav"> 
+        <div class="containerN NavBar w-NavBar">
+         <a class="logo-wrapper w-nav-logo w--current" href="/">
+            <img class="logo" src="/static/img/semicircle.png" width="50px">LeadDeck
+          </a>
+         <nav role="navigation" class="nav-menu w-naw-menu">
           <div class="buttons_in">
-            <button class="features">Features</button>
-            <button class="solutions">Solutions</button>
-            <button class="pricing">Pricing</button>
-            <button class="resources">Resources</button>
-            <div style="width: 0px;" class="tabstyles"></div>
+            <div class="nav-link-dropdown w-dropdown" style="max-width: 1200px;">
+              <div class="nav-dropdown w-dropdown-toggle" role="button" tabindex="0">
+                <div class="nav-dropdown-text">Features</div>
+                <img src="/static/img/scroll-down.png" width="10px" class="down-arrow-icon" alt="Down arrow icon">
+              </div>
+            </div>
+            <div class="nav-link-dropdown w-dropdown" style="max-width: 1200px;">  
+              <div class="nav-dropdown w-dropdown-toggle" role="button" tabindex="0">
+                <div class="nav-dropdown-text">Solution</div>
+                <img src="/static/img/scroll-down.png" width="10px" class="down-arrow-icon" alt="Down arrow icon">
+              </div>
+            </div>  
+            <div class="nav-link-dropdown w-dropdown" style="max-width: 1200px;">
+              <div class="nav-dropdown w-dropdown-toggle" role="button" tabindex="0">
+                <div class="nav-dropdown-text">Resources</div>
+                <img src="/static/img/scroll-down.png" width="10px" class="down-arrow-icon" alt="Down arrow icon">
+              </div>
+            </div>  
+            <a href="/pricing" class="nav-link w-nav-link" style="max-width: 1200px;">Pricing</a>
           </div>
              <div class="buttons_in_group">
                  {% if request.user.is_authenticated %}
-                     <a class="login" href="{% url 'dashboard' %}"> Dashboard</a>
-                     <a class="login" href="{% url 'leads_list' %}"> Leads</a>
-                     <a class="Sign in" href="{% url 'logout' %}"> Log out</a>
+                     <a class="login" href="{% url 'dashboard' %}">Dashboard</a>
+                     <a class="login" href="{% url 'leads_list' %}">Leads</a>
+                     <a class="Sign in" href="{% url 'logout' %}">Log out</a>
                  {% else %}
-                     <a class="login" href="{% url 'login' %}">Log in</a>
-                     <a class="Sign in" href="{% url 'sign' %}">Sign in</a>
+                     <a class="nav-link w-nav-link" href="{% url 'login' %}" style="max-width: 1200px;">Log in</a>
+                     <a class="Sign nav-link w-nav-link" href="{% url 'sign' %}" style="max-width: 1200px;">Sign in</a>
                  {% endif %}
              </div>
+         </nav>   
         </div>
       </div>
     </header>

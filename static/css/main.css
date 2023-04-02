@@ -2,95 +2,248 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
+}
   
+  /* html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  height: 100%
+} */
+
   body {
+    margin: 0;
+    min-height: 100%;
+    min-width: 320px;
     font-family: 'Roboto', sans-serif;
+    text-rendering: optimizeLegibility;
     font-size: 16px;
     color: hsl(125, 25%, 81%);
     background-color: #0D1B1E;
-    overflow: hidden;
-  }
+    line-height: 20px;
+}
   
-  /* Стили для Header */
+  .global-navigation {
+  height: 48px;
+  background-color: #324d5c;
+}
+
   .BigNavStyles {
-    border-bottom: 1px solid #e8e7ea;
-    height: 80px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+}
   
-  
+  article, aside, details, 
+  figcaption, figure, footer, header, hgroup, 
+  main, menu, nav, section, summary {
+    display: block;
+}
+
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
   .NavBar {
     display: flex;
-  }
-  
-  .logo-wrapper {
-    display: flex;
+    height: 100%;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: none;
+}
+
+  .containerN {
+    width: 100%;
+    max-width: 1200px;
+    padding-right: 15px;
+    padding-bottom: 0;
+    padding-left: 15px;
     align-items: center;
+}
+
+  .w-NavBar {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 940px;
+}
+ 
+  .logo-wrapper.w--current {
+    margin-right: 15px;
+}
+
+  .logo-wrapper {
+    flex: 0 0 auto;
+}
+
+  .w-nav-logo {
+    position: relative;
+    float: left;
     text-decoration: none;
     font-size: 30px;
     font-weight: 700;
     color: #e8e7ea;
-  }
+}
+
+  /* .buttons_in_group {
+  background-color: transparent;
+  text-decoration: none;
+} */
+
+  a:active,a:hover {
+  outline: 0;
+}
+
+  .nav-link:hover {
+  background-color: #293f4b;
+  opacity: 1;
+}
+
+  .logo {
+    max-width: none;
+}
   
-  .logo-wrapper img {
-    margin-right: 7px;
-  }
-  
+  img {
+    border: 0;
+    vertical-align: middle;
+    display: inline-block;
+    max-width: 100%;
+}
+
+  .nav-menu {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex: 0 auto;
+}
+
+  .w-nav-menu {
+    position: relative;
+    float: right;
+}
+
   .buttons_in {
     display: flex;
     align-items: center;
     margin-left: 40px;
-  }
-  
-  .buttons_in button {
+}
+
+  .nav-link-dropdown {
+    position: relative;
+    display: block;
+    height: 48px;
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 1;
+    transform: translate(0,0);
+    transition: background-color .2s ease-in-out;
+    font-family: 'Montserrat Quaderno',sans-serif;
+    color: #fff;
+    font-size: .875rem;
+    font-weight: 500;
+}
+
+  .w-dropdown {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 900;
+}
+
+  .nav-dropdown {
+    display: flex;
+    height: 48px;
+    padding: 0 15px;
+    justify-content: flex-start;
+    align-items: center;
+    color: #d6dbde;
+}
+
+  .w-dropdown-toggle {
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+  .w-dropdown-btn, .w-dropdown-link {
+    position: relative;
+    vertical-align: top;
+    text-decoration: none;
+    color: #222;
+    padding: 20px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+}
+
+  .down-arrow-icon {
+    margin-left: 8px;
+    padding-left: 0;
+}
+
+ .nav-dropdown img {
+    border: 0;
+    vertical-align: middle;
+    display: inline-block;
+    max-width: 100%;
+}
+
+  .nav-link-dropdown:hover {
+    background-color: #293f4b;
+    opacity: 1;
+    transform: none;
+}
+  .nav-dropdown-text {
     border: none;
     background: none;
     font-size: 16px;
     font-weight: 500;
     color: #e8e7ea;
-    margin-right: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
   }
-  
-  .buttons_in button:hover {
-    color: #0079bf;
-  }
-  
+
+  .nav-link {
+    position: relative;
+    display: flex;
+    height: 48px;
+    padding: 0 15px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transform: translate(0,0);
+    transition: background-color .2s ease-in-out;
+    font-family: 'Montserrat Quaderno',sans-serif;
+    color: #fff;
+    font-size: .875rem;
+    font-weight: 500;
+}
+
   .buttons_in_group {
     display: flex;
-    align-items: center;
   }
-  
-  .buttons_in_group a {
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 500;
-    color: #e8e7ea;
-    margin-left: 20px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-  }
-  
+
   .buttons_in_group a:hover {
     color: #0D1B1E;
     background-color: #d4ded5;
-  }
-  
-  .login {
-    border: 2px solid #d4ded5;
-    color: #d4ded5;
-  }
+  } 
   
   .Sign {
-    background-color: #4965a2;
-    color: #fff;
-  }
+    background-color: hsl(125, 25%, 81%);
+    color: #000000;
+  } 
   
+  /* page */
+
   .leftUp {
     text-align: left;
     display: block;
@@ -119,19 +272,20 @@
   p {
     color: #fff;
   }
-  /* page */
+
   .item {
-          width: 50px;
-          height: 50px;
+          width: 80px;
+          height: 80px;
           background-color: hsl(125, 25%, 81%);
-          margin-right: 10px;
           transition: .3s;
-          border-radius: 15px;
+          border-radius: 25px;
+          margin-left: 15px;
+          margin-right: 0px;
       }
 
       .container {
           display: flex;
-          justify-content:right;
+          justify-content: left;
           align-items: center;
           margin: 1em;
       }
@@ -145,5 +299,3 @@
           /* transform: rotate(45deg); */
           transform: scale(1.2);
       }
-
-      /* _________________________________________________________________________________ */

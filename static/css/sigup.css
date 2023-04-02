@@ -10,9 +10,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 70vh;
     overflow: hidden;
     margin: 0;
+    margin-top: 70px;
 }
 
 .reg_container_log {
