@@ -1,32 +1,74 @@
 {% extends 'userprofile/login.html' %}
 
-{% block title %} Sing up{% endblock %}
+{% block title %}{% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="/static/css/sigup.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Log in to Flowhub.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in to Flowhub</title>
+    <link href="/static/css/signup.css" rel="stylesheet" type="text/css">
+</head>
+<body class="flowhub-brand" data-analystics-screen="loginChoiceScreenV" data-analystics-marketing-event="true">
 
-<div class="reg_main_cont">
-<div class="reg_container_log">
-    <form method="post" action="{% url 'sign' %}">
-        {% csrf_token %}
-        <h1>Registration</h1>
-        <div class="reg_form-control">
-            {{ form.username }}
-            <label for="{{ form.username.id_for_label }}"><span>Username</span></label>
-        </div>
-        <div class="reg_form-control">
-            {{ form.password1 }}
-            <label for="{{ form.password1.id_for_label }}"><span>Password</span></label>
-        </div>
-        <div class="reg_form-control">
-            {{ form.password2 }}
-            <label for="{{ form.password2.id_for_label }}"><span>Confirm Password</span></label>
-        </div>
-        <button class="py-4 px-8 bg-teal-600 text-white rounded-xl reg_submit" type="submit">Submit</button>
-    </form>
-    <div class="reg_text">
-        <a href="{% url 'login' %}">Already registered? Log in</a>
+    <div>
+        <a href="/"><img alt="Flowhub" class="flowhub-main-logo" src="/static/img/Logo union.svg"></a>
+        <section class="inner-section">
+            <div class="section-wrapper">
+                <div class="account-form">
+                    <h1>Sign up for an account</h1>
+                    <div class="login-password-container">
+                        <form id="login-form" method="post" action="{% url 'sign' %}">
+                            <div class="login-password-container-email">
+                                {% csrf_token %}
+                                <div class="email-password">
+                                    <div class="email-login">
+                                        <input for="{{ form.username.id_for_label }}" type="text" name="user" id="id_username" class="form-field" autocorrect="off" spellcheck="off" autocapitalize="off" autofocus="autofocus" placeholder="Enter email" value autocomplete="username" inputmode="email" required>
+                                    </div>
+                                    <div class="password-login">
+                                        <input type="password" name="password" id="id_password" class="form-field" placeholder="Password" autocomplete="current-password" required>
+                                    </div>
+                                    <div class="password-login">
+                                        <input for="{{ form.password1.id_for_label }}" type="password" name="password" id="id_password" class="form-field" placeholder="Confirm password" autocomplete="current-password" required>
+                                    </div>
+                                    <input for="{{ form.password2.id_for_label }}" id="login" type="submit" class="py-4 px-8 bg-teal-600 text-white rounded-xl button account-button button-blue btn btn-success" value="Continue">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="login-methods hide-when-two-factor">
+                            <div class="login-oauth-container">
+                                <div class="login-method-separator">OR</div>
+                                <a id="googleButton" class="google-button oauth-button" href>
+                                    <span id="google-icon" class="icon"></span>
+                                    <span class="label" data-analystics-button="loginWithGmailButton">Continue with Google</span>
+                                </a>
+                                <a id="appleButton" class="apple-button oauth-button" href>
+                                    <span id="apple-icon" class="icon"></span>
+                                    <span class="label" data-analystic-button="loginWithAppleButton">Continue with Apple</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="bottom-form-separator">
+                    <ul class="bottom-form-link">
+                        <li>
+                            <a class="forgotLink" href="{% url 'login' %}" data-analytics-link="forgotPasswordLink">Already have an account? Log in</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="bottom-form-link smaller-links"></ul>
+            </div>
+        </section>
     </div>
-</div>
-</div>
+    <footer class="global-footer" data-track-group="Footer"></footer>
+    <div class="background"></div>
+
+    <!-- <script src="/static/js/login.js"></script> -->
+
+</body>
+</html>
 {% endblock %}

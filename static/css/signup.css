@@ -309,8 +309,3 @@ hr {
     text-decoration: none;
     color: #0052cc;
 }
-
-.flowhub-brand .inner-section .bottom-form-link li:not(:first-child)::before {
-    content: '\2022';
-    margin: 0 8px 0px 4px;
-}
