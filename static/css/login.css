@@ -220,6 +220,7 @@ input {
     line-height: 1;
     margin-top: 16px;
     margin-bottom: 16px;
+    color: #4d4d4d;
 }
 
 .flowhub-brand .inner-section .account-form .oauth-button {
