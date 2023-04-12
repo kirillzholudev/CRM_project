@@ -8,9 +8,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Log in to Flowhub.">
+    <meta name="description" content="Sign up for an account.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in to Flowhub</title>
+    <title>Sign up for an account</title>
     <link href="/static/css/signup.css" rel="stylesheet" type="text/css">
 </head>
 <body class="flowhub-brand" data-analystics-screen="loginChoiceScreenV" data-analystics-marketing-event="true">
@@ -30,10 +30,10 @@
                                         <input for="{{ form.username.id_for_label }}" type="text" name="user" id="id_username" class="form-field" autocorrect="off" spellcheck="off" autocapitalize="off" autofocus="autofocus" placeholder="Enter email" value autocomplete="username" inputmode="email" required>
                                     </div>
                                     <div class="password-login">
-                                        <input type="password" name="password" id="id_password" class="form-field" placeholder="Password" autocomplete="current-password" required>
+                                        <input type="password" name="password" id="id_password1" class="form-field" placeholder="Password" autocomplete="current-password" required>
                                     </div>
                                     <div class="password-login">
-                                        <input for="{{ form.password1.id_for_label }}" type="password" name="password" id="id_password" class="form-field" placeholder="Confirm password" autocomplete="current-password" required>
+                                        <input for="{{ form.password1.id_for_label }}" type="password" name="password" id="id_password2" class="form-field" placeholder="Confirm password" autocomplete="current-password" required>
                                     </div>
                                     <input for="{{ form.password2.id_for_label }}" id="login" type="submit" class="py-4 px-8 bg-teal-600 text-white rounded-xl button account-button button-blue btn btn-success" value="Continue">
                                 </div>
@@ -44,11 +44,11 @@
                                 <div class="login-method-separator">OR</div>
                                 <a id="googleButton" class="google-button oauth-button" href>
                                     <span id="google-icon" class="icon"></span>
-                                    <span class="label" data-analystics-button="loginWithGmailButton">Continue with Google</span>
+                                    <span class="label" data-analystics-button="signupWithGmailButton">Continue with Google</span>
                                 </a>
                                 <a id="appleButton" class="apple-button oauth-button" href>
                                     <span id="apple-icon" class="icon"></span>
-                                    <span class="label" data-analystic-button="loginWithAppleButton">Continue with Apple</span>
+                                    <span class="label" data-analystic-button="signupWithAppleButton">Continue with Apple</span>
                                 </a>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                     <hr class="bottom-form-separator">
                     <ul class="bottom-form-link">
                         <li>
-                            <a class="forgotLink" href="{% url 'login' %}" data-analytics-link="forgotPasswordLink">Already have an account? Log in</a>
+                            <a class="haveAnAccount" href="{% url 'login' %}" data-analytics-link="haveAnAccountLink">Already have an account? Log in</a>
                         </li>
                     </ul>
                 </div>
