@@ -1,123 +1,316 @@
-* {
-    box-sizing: border-box;
+html {
+    font-family: "jaf-facitweb","Helvetica Neue",Arial,sans-serif;
+    color: #4d4d4d;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.44em;
 }
 
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
 
-.main_cont {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #0D1B1E;
-    color: #fff;
+html::selection {
+    background: hsl(202,92%,85%);
+    text-shadow: none;
+}
+
+.flowhub-brand {
+    background-color: #f9fafc;
+    font-family: '-apple-system',BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,'Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    /* -webkit-flex-direction: column;
+    -ms-flex-direction: column; */
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    min-height: 100vh;
+    -webkit-box-pack: justify;
+    /* -webkit-justify-content: space-between; */
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+body {
     margin: 0;
-    margin-top: 70px;
 }
 
-.container_log {
-    background-color: #393e467d;
-    padding: 20px 40px;
-    border-radius: 10px;
+.flowhub-brand .flowhub-main-logo {
+    display: block;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.main_cont .container_log h1 {
-    text-align: center;
+img, svg {
+    vertical-align: middle;
+}
+
+img {
+    border: 0;
+}
+
+.flowhub-brand .inner-section {
+    width: 100%;
+    padding: 0px;
+    overflow: visible;
     margin-bottom: 30px;
 }
 
-.container_log a {
-    text-decoration: none;
-    color: lightblue;
+section {
+    overflow: hidden;
+    padding: 0 1em;
+    word-break: break-word;
 }
 
-.container_log a:hover {
-    color: rgb(184, 231, 247);
-    transition: 0.2s all ease;
-}
+/* @media only screen and (min-width: 650px)
+section {
+    padding: 2em 1em;
+} */
 
-.submit {
-    cursor: pointer;
-    display: inline-block;
-    width: 100%;
-    background: lightblue;
-    padding: 15px;
-    font-family: inherit;
-    font-size: 26px;
-    border: 0;
-    border-radius: 5px;
-}
-
-
-.submit:focus {
-    outline: 0;
-}
-
-
-.submit:active {
-    transform: scale(0.98);
-}
-
-.submit:hover {
-    background-color: rgb(150, 190, 203);
-    transition: all 0.3s ease;
-}
-
-.text {
-    margin-top: 30px;
-}
-
-.form-control {
-    position: relative;
-    margin: 20px 0 40px;
-    width: 300px;
-}
-
-.form-control input {
-    background-color: transparent;
-    border: 0;
-    border-bottom: 2px #fff solid;
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display: block;
+}
+
+.flowhub-brand .inner-section .section-wrapper {
+    max-width: 400px;
+}
+
+.section-wrapper {
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.flowhub-brand .inner-section .account-form {
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 25px 40px;
+    box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+}
+
+/* h1 */
+
+.flowhub-brand .inner-section h1 {
+    text-align: center;
+    color: #3C5965;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    line-height: 28px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 1.777em;
+    line-height: 1.2em;
+    margin-top: 1.6em;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/* Input */
+
+.flowhub-brand .inner-section .account-form textarea,
+.flowhub-brand .inner-section .account-form input[type='text'],
+.flowhub-brand .inner-section .account-form input[type='email'],
+.flowhub-brand .inner-section .account-form input[type='password'],
+.flowhub-brand .inner-section .account-form input[type='button'],
+.flowhub-brand .inner-section .account-form input[type='submit'],
+.flowhub-brand .inner-section .account-form .select-container,
+.flowhub-brand .inner-section .account-form .select-container select {
     width: 100%;
-    padding: 15px 0;
-    font-size: 18px;
+}
+
+.flowhub-brand .inner-section .form-field {
+    font-size: 14px;
+    background-color: #fafbfc;
+    border: 2px solid #dfe1e6;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 3px;
+    height: 40px;
+    -webkit-transition: background-color .2s ease-in-out 0s,border-color .2s ease-in-out 0s;
+    transition: background-color .2s ease-in-out 0s,border-color .2s ease-in-out 0s;
+}
+
+textarea, input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+    background: #EDEFF0;
+    border-radius: 4px;
+    border: 1px solid #CDD2D4;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.5em;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Button */
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+.flowhub-brand .inner-section .account-form .button-blue:not(:disabled) {
+    background: #7C9FAD;
+}
+
+.flow-brand .inner-section .account-form .button-blue {
+    box-shadow: none;
+}
+
+.flow-brand .inner-section .account-button {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+button, html input[type="button"], input[type="submit"] {
+    /* -webkit-appearance: button; */
+    cursor: pointer;
+}
+
+.button {
+    background: #CDD2D4;
+    border-radius: 0.3em;
+    box-shadow: 0 1px 0 hsl(0,0%,30%);
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 0.6em 1.3em;
+    position: relative;
+    text-decoration: none;
+    border: 0px;
+}
+
+.button-blue {
     color: #fff;
 }
 
-.form-control input:focus,
-.form-control input:valid {
-    outline: 0;
-    border-bottom-color: lightblue;
+textarea, input {
+    display: block;
+    margin: 0 0 1.2em;
 }
 
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #232C31 inset !important;
-    -webkit-text-fill-color: #fff !important;
+input {
+    line-height: normal;
 }
 
-.form-control label {
-    position: absolute;
-    top: 15px;
-    left: 0;
-    pointer-events: none;
+.flowhub-brand .inner-section .account-form
+.button-blue:hover {
+    background: #83a7b6;
 }
 
-.form-control label span {
+
+.flowhub-brand .inner-section .account-form .login-method-separator {
+    text-align: center;
+    font-size: 12px;
+    line-height: 1;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.flowhub-brand .inner-section .account-form .oauth-button {
+    background: #fff;
+    color: rgba(0,0,0,0.54);
+    box-shadow: rgba(0,0,0,0.2) 1px 1px 5px 0;
+    border-color: transparent;
+    text-align: center;
+    border-radius: 3px;
+    width: 99%;
+    height: 39px;
+    padding-top: 0;
+    margin-bottom: 12px;
+    display: block;
+    text-decoration: none;
+    -webkit-transition: background-color .2s ease-in-out 0s,border-color .2s ease-in-out 0s;
+    transition: background-color .2s ease-in-out 0s,border-color .2s ease-in-out 0s;
+}
+
+.flowhub-brand .inner-section .account-form #google-icon {
+    background: url('https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/8215f6659adc202403198fef903a447e/sign-in-with-google.svg') 0 50% no-repeat;
+}
+
+.flowhub-brand .inner-section .account-form .oauth-button span.icon {
     display: inline-block;
-    font-size: 18px;
-    min-width: 5px;
-    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-radius: 1px;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
 }
 
-
-.form-control input:focus + label span,
-.form-control input:valid + label span {
-    color: lightblue;
-    transform: translateY(-30px);
+.flowhub-brand .inner-section .account-form .oauth-button span.label {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: bold;
+    color: #505f79;
+    padding: 3px;
+    height: 32px;
+    line-height: 32px;
 }
 
-input:-webkit-autofill + label span {
-    color: lightblue;
-    transform: translateY(-30px);
+.flowhub-brand .inner-section .account-form #apple-icon {
+    background: url('https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/6fc4ecf05a97cfb43cfcbb14738a5aa0/apple-logo-black.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    vertical-align: -3px;
+}
+
+.flowhub-brand .inner-section .account-form .oauth-button:hover {
+    background-color: #f4f6f8;
+    text-decoration: none;
+}
+
+.flowhub-brand .inner-section a:hover, .atlassian-brand .inner-section a:hover:visited {
+    color: #0052cc;
+    text-decoration: underline;
+}
+
+.flowhub-brand .inner-section hr {
+    margin-top: 25px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid hsl(0,0%,80%);
+    margin: 1em 0;
+    padding: 0;
+}
+
+.flowhub-brand .inner-section .bottom-form-link {
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    padding: 0;
+}
+
+.flowhub-brand .inner-section .bottom-form-link li {
+    display: inline-block;
+    list-style: none;
+}
+
+.flowhub-brand .inner-section a {
+    text-decoration: none;
+    color: #0052cc;
+}
+
+.flowhub-brand .inner-section .bottom-form-link li:not(:first-child)::before {
+    content: '\2022';
+    margin: 0 8px 0px 4px;
 }

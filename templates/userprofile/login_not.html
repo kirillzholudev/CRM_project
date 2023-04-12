@@ -1,0 +1,30 @@
+{% extends 'core/view/main_page.html' %}
+
+{% block title %} Sing up{% endblock %}
+
+
+
+    {% block content %}
+ <link rel="stylesheet" href="/static/css/login.css">
+
+    <div class="main_cont">
+      <div class="container_log">
+        <h1>Login</h1>
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="form-control">
+                <input type="text" name="username" id="id_username" autocomplete="username" required>
+                <label><span>Your Email</span></label>
+            </div>
+            <div class="form-control">
+                <input type="password" name="password" id="id_password" autocomplete="password" required>
+                <label><span>Your Password</span></label>
+            </div>
+            <button class="py-4 px-8 bg-teal-600 text-white rounded-xl submit">Submit</button>
+            <p class="text">Don't have an account?
+              <a href="{% url 'sign' %}">Create Account</a></p>
+        </form>
+      </div>
+    </div>
+    <script src="/static/js/login.js"></script>
+{% endblock %}
