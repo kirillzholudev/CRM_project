@@ -1,8 +1,8 @@
-from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
 
-from .models import Userprofile
+from django.contrib import messages
 
 
 def sign(request):
@@ -10,19 +10,16 @@ def sign(request):
         form = UserCreationForm(request.POST)
 
         if form.is_valid():
-            user = form.save()
-            user_profile = Userprofile.objects.create(user=user)
+            if form.is_valid():
+                form.save()
+                username = form.cleaned_data.get('username')
+                password = form.cleaned_data.get('password1')
+                user = authenticate(request, username=username, password=password)
+                login(request, user)
 
-            # Authenticate and log in the user.
-            user = authenticate(
-                username=user.username,
-                password=request.POST['password1']
-            )
-            login(request, user)
-
-            # Redirect to the dashboard.
-            return redirect('/dashboard/')
-
+                return redirect('/dashboard/')
+            else:
+                messages.error(request, 'There was an error with your registration. Please try again.')
     else:
         form = UserCreationForm()
 

@@ -27,10 +27,12 @@
                                 {% csrf_token %}
                                 <div class="email-password">
                                     <div class="email-login">
-                                        <input type="text" name="user" id="id_username" class="form-field" autocorrect="off" spellcheck="off" autocapitalize="off" autofocus="autofocus" placeholder="Enter email" value autocomplete="username" inputmode="email" required>
+                                        {{ form.username }}
+{#                                        <input type="text" name="user" id="id_username" class="form-field" autocorrect="off" spellcheck="off" autocapitalize="off" autofocus="autofocus" placeholder="Enter email" value autocomplete="username" inputmode="email" required>#}
                                     </div>
                                     <div class="password-login">
-                                        <input type="password" name="password" id="id_password" class="form-field" placeholder="Password" autocomplete="current-password" required>
+                                        {{ form.password }}
+{#                                        <input type="password" name="password" id="id_password" class="form-field" placeholder="Password" autocomplete="current-password" required>#}
                                     </div>
                                     <input id="login" type="submit" class="py-4 px-8 bg-teal-600 text-white rounded-xl button account-button button-blue btn btn-success" value="Continue">
                                 </div>
