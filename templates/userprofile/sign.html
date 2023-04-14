@@ -21,34 +21,56 @@
             <div class="section-wrapper">
                 <div class="account-form">
                     <h1>Sign up for an account</h1>
-                    <div class="login-password-container">
-                        <form id="login-form" method="post" action="{% url 'sign' %}">
-                            <div class="login-password-container-email">
-                                <div class="email-password">
-                                    {% csrf_token %}
-                                    {% load socialaccount %}
-                                    <div class="email-login">
-
-                                        <input form="{{ form.username.id_for_label }}" type="email" name="user" id="id_username" class="form-field" autocorrect="off" spellcheck="off" autocapitalize="off" autofocus="autofocus" placeholder="Enter email" value autocomplete="email" inputmode="email" required>
-                                    </div>
-                                    <div class="email-login">
-
-                                        <input form="{{ form.username.id_for_label }}" type="text" name="user" id="id_username" class="form-field" autocorrect="off" spellcheck="off" autocapitalize="off" autofocus="autofocus" placeholder="Username" value autocomplete="email" required>
-                                    </div>
-                                    <div class="password-login">
-                                        <input form="{{ form.password1.id_for_label }}" type="password" name="password" id="id_password1" class="form-field" placeholder="Password" autocomplete="current-password" required>
-                                    </div>
-                                        <button class="py-4 px-8 bg-teal-600 text-white rounded-xl button account-button button-blue btn btn-success" id="login" type="submit">Submit</button>
+                    {% if form.email.errors %}
+                        <div class="error-message">
+                            <ul>
+                                {% for error in form.email.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                    <form id="login-form" method="post" action="{% url 'sign' %}">
+                        <div class="login-password-container-email">
+                            <div class="email-password">
+                                {% csrf_token %}
+                                <div class="email-login">
+                                    <label for="{{ form.email.id_for_label }}">Email:</label>
+                                    {{ form.email }}
                                 </div>
+                                <div class="email-login">
+                                    <label for="{{ form.username.id_for_label }}">Username:</label>
+                                    {{ form.username }}
+                                </div>
+                                <div class="password-login">
+                                    <label for="{{ form.password1.id_for_label }}">Password:</label>
+                                    {{ form.password1 }}
+                                </div>
+                                <div class="password-login">
+                                    <label for="{{ form.password2.id_for_label }}">Confirm Password:</label>
+                                    {{ form.password2 }}
+                                </div>
+                                <button class="py-4 px-8 bg-teal-600 text-white rounded-xl button account-button button-blue btn btn-success" id="login" type="submit">Submit</button>
                             </div>
-                        </form>
+                        </div>
+                    </form>
                      <div class="login-methods hide-when-two-factor">
                         <div class="login-oauth-container">
                             <div class="login-method-separator">OR</div>
-                            <a id="googleButton" class="google-button oauth-button" href>
-                                <span id="google-icon" class="icon"></span>
-                                <span class="label" data-analystics-button="signupWithGmailButton">Continue with Google</span>
-                            </a>
+                            {% load socialaccount %}
+
+{#                                Обязательно для гугла метод пост в форме и кнопка button!!!!#}
+
+
+                                <form method="POST" action="{% provider_login_url 'google' %}?next=/" class="google-button oauth-button">
+                                    {% csrf_token %}
+                                    <button type="submit" class="google-button oauth-button">Continue with Google</button>
+                                </form>
+
+{#                            <a id="googleButton" class="google-button oauth-button" href>#}
+{#                                <span id="google-icon" class="icon"></span>#}
+{#                                <span class="label" data-analystics-button="signupWithGmailButton">Continue with Google</span>#}
+{#                            </a>#}
                             <a id="appleButton" class="apple-button oauth-button" href>
                                 <span id="apple-icon" class="icon"></span>
                                 <span class="label" data-analystic-button="signupWithAppleButton">Continue with Apple</span>

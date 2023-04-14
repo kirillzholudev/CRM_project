@@ -32,7 +32,7 @@
                                 <div class="email-password">
                                     <div class="email-login">
                                         {{ form.username }}
- {#                                       <input type="text" name="user" id="id_username" class="form-field" autocorrect="off" spellcheck="off" autocapitalize="off" autofocus="autofocus" placeholder="Enter email" value autocomplete="username" inputmode="email" required>#}
+{#                                        <input type="text" name="user" id="id_username" class="form-field" autocorrect="off" spellcheck="off" autocapitalize="off" autofocus="autofocus" placeholder="Enter email" value autocomplete="username" inputmode="email" required>#}
                                     </div>
                                     <div class="password-login">
                                         {{ form.password }}
@@ -47,10 +47,17 @@
 
                                 <div class="login-method-separator">OR</div>
                                 {% load socialaccount %}
-                                <a href="{% provider_login_url 'google' %}?next=/" id="googleButton" class="google-button oauth-button">
-                                    <span id="google-icon" class="icon"></span>
-                                    <span class="label"  data-analystics-button="loginWithGmailButton">Continue with Google</span>
-                                </a>
+
+{#                                Обязательно для гугла метод пост в форме и кнопка button!!!!#}
+
+
+                                <form method="POST" action="{% provider_login_url 'google' %}?next=/" class="google-button oauth-button">
+                                    {% csrf_token %}
+
+                                    <button type="submit" class="google-button oauth-button">Continue with Google</button>
+
+
+                                </form>
                                 <a id="appleButton" class="apple-button oauth-button" href>
                                     <span id="apple-icon" class="icon"></span>
                                     <span class="label" data-analystic-button="loginWithAppleButton">Continue with Apple</span>

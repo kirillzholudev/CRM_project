@@ -160,3 +160,16 @@ EMAIL_HOST_PASSWORD = ''
 
 EMAIL_FILE_PATH = './'
 PASSWORD_RESET_TIMEOUT_DAYS = 1
+
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': '940548680594-9u9m6078oi9a5ao8hsspl6k377ksga83.apps.googleusercontent.com',
+            'secret': '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',
+            'key': ''
+        },
+        'SCOPE': ['profile', 'email'],
+        'AUTH_PARAMS': {'access_type': 'online', 'prompt': 'select_account'},
+    }
+}
