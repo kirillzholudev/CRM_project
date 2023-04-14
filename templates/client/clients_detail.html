@@ -1,0 +1,44 @@
+{% extends 'core/view/main_page.html' %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="/static/css/lead_detail.css">
+{% endblock %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <div class="py-6 px-6">
+        <h1 class="mb-6 text-xl">{{ client.name }}</h1>
+
+        <table class="lead-table">
+            {% if client.descriptions %}
+                <tr>
+                    <td class="font-semibold">Descriptions</td>
+                    <td>{{ client.descriptions }}</td>
+                </tr>
+            {% endif %}
+
+            <tr>
+                <td class="font-semibold">Created at</td>
+                <td>{{ client.created_at }}</td>
+            </tr>
+
+            <tr>
+                <td class="font-semibold">Modified at</td>
+                <td>{{ client.modified_at }}</td>
+            </tr>
+        </table>
+
+        <hr class="my-4">
+
+        <a href="/" class="btn btn-secondary">Edit</a>
+        <a href="/" class="btn btn-danger">Delete</a>
+
+
+        <hr class="my-4">
+
+        <a href="{% url 'clients_list' %}" class="btn btn-link">Back to leads</a>
+
+    </div>
+
+{% endblock %}
