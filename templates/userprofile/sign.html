@@ -57,10 +57,20 @@
                      <div class="login-methods hide-when-two-factor">
                         <div class="login-oauth-container">
                             <div class="login-method-separator">OR</div>
-                            <a id="googleButton" class="google-button oauth-button" href>
-                                <span id="google-icon" class="icon"></span>
-                                <span class="label" data-analystics-button="signupWithGmailButton">Continue with Google</span>
-                            </a>
+                            {% load socialaccount %}
+
+{#                                Обязательно для гугла метод пост в форме и кнопка button!!!!#}
+
+
+                                <form method="POST" action="{% provider_login_url 'google' %}?next=/" class="google-button oauth-button">
+                                    {% csrf_token %}
+                                    <button type="submit" class="google-button oauth-button">Continue with Google</button>
+                                </form>
+
+{#                            <a id="googleButton" class="google-button oauth-button" href>#}
+{#                                <span id="google-icon" class="icon"></span>#}
+{#                                <span class="label" data-analystics-button="signupWithGmailButton">Continue with Google</span>#}
+{#                            </a>#}
                             <a id="appleButton" class="apple-button oauth-button" href>
                                 <span id="apple-icon" class="icon"></span>
                                 <span class="label" data-analystic-button="signupWithAppleButton">Continue with Apple</span>

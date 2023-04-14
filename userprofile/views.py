@@ -8,8 +8,6 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from .forms import SignUpForm
 
-
-
 def sign(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
