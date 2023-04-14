@@ -26,6 +26,7 @@
                             <div class="login-password-container-email">
                                 <div class="email-password">
                                     {% csrf_token %}
+                                    {% load socialaccount %}
                                     <div class="email-login">
 
                                         <input form="{{ form.username.id_for_label }}" type="text" name="user" id="id_username" class="form-field" autocorrect="off" spellcheck="off" autocapitalize="off" autofocus="autofocus" placeholder="Enter email" value autocomplete="username" inputmode="email" required>
@@ -40,18 +41,17 @@
                                 </div>
                             </div>
                         </form>
-                        <div class="login-methods hide-when-two-factor">
-                            <div class="login-oauth-container">
-                                <div class="login-method-separator">OR</div>
-                                <a id="googleButton" class="google-button oauth-button" href>
-                                    <span id="google-icon" class="icon"></span>
-                                    <span class="label" data-analystics-button="signupWithGmailButton">Continue with Google</span>
-                                </a>
-                                <a id="appleButton" class="apple-button oauth-button" href>
-                                    <span id="apple-icon" class="icon"></span>
-                                    <span class="label" data-analystic-button="signupWithAppleButton">Continue with Apple</span>
-                                </a>
-                            </div>
+                     <div class="login-methods hide-when-two-factor">
+                        <div class="login-oauth-container">
+                            <div class="login-method-separator">OR</div>
+                            <a id="googleButton" class="google-button oauth-button" href>
+                                <span id="google-icon" class="icon"></span>
+                                <span class="label" data-analystics-button="signupWithGmailButton">Continue with Google</span>
+                            </a>
+                            <a id="appleButton" class="apple-button oauth-button" href>
+                                <span id="apple-icon" class="icon"></span>
+                                <span class="label" data-analystic-button="signupWithAppleButton">Continue with Apple</span>
+                            </a>
                         </div>
                     </div>
                     <hr class="bottom-form-separator">
