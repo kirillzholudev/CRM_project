@@ -128,7 +128,8 @@ h1 {
 .flowhub-brand .inner-section .account-form input[type='button'],
 .flowhub-brand .inner-section .account-form input[type='submit'],
 .flowhub-brand .inner-section .account-form .select-container,
-.flowhub-brand .inner-section .account-form .select-container select {
+.flowhub-brand .inner-section .account-form .select-container select,
+.flowhub-brand .inner-section .account-form .btn {
     width: 100%;
 }
 
