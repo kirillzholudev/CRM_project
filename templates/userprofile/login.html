@@ -1,8 +1,12 @@
 {% extends 'core/view/main_page.html' %}
 
+
+
 {% block title %}{% endblock %}
 
 {% block content %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,10 +44,12 @@
                         </form>
                         <div class="login-methods hide-when-two-factor">
                             <div class="login-oauth-container">
+
                                 <div class="login-method-separator">OR</div>
-                                <a id="googleButton" class="google-button oauth-button" href>
+                                {% load socialaccount %}
+                                <a href="{% provider_login_url 'google' %}?next=/" class="google-button oauth-button">Continue with Google</a>
                                     <span id="google-icon" class="icon"></span>
-                                    <span class="label" data-analystics-button="loginWithGmailButton">Continue with Google</span>
+                                    <span class="label"  data-analystics-button="loginWithGmailButton">Continue with Google</span>
                                 </a>
                                 <a id="appleButton" class="apple-button oauth-button" href>
                                     <span id="apple-icon" class="icon"></span>
@@ -55,7 +61,7 @@
                     <hr class="bottom-form-separator">
                     <ul class="bottom-form-link">
                         <li>
-                            <a class="forgotLink" href="/forgot" data-analytics-link="forgotPasswordLink">Forgot password?</a>
+                            <a class="forgotLink" href="{% url 'password_reset' %}" data-analytics-link="forgotPasswordLink">Forgot password?</a>
                         </li>
                         <li>
                             <a class="sigrupLink" href="{% url 'sign' %}" data-analytics-link="signUpLoginLink">Don't have an account?</a>
