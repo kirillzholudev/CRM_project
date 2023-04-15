@@ -105,7 +105,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     letter-spacing: -0.01em;
     line-height: 28px;
     margin-top: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 }
 
 h1 {
@@ -121,42 +121,84 @@ h1 {
 
 /* Input */
 
-.flowhub-brand .inner-section .account-form textarea,
-.flowhub-brand .inner-section .account-form input[type='text'],
-.flowhub-brand .inner-section .account-form input[type='email'],
-.flowhub-brand .inner-section .account-form input[type='password'],
-.flowhub-brand .inner-section .account-form input[type='button'],
-.flowhub-brand .inner-section .account-form input[type='submit'],
-.flowhub-brand .inner-section .account-form .select-container,
-.flowhub-brand .inner-section .account-form .select-container select,
+.input-container {
+    position: relative;
+    margin: 30px auto;
+    width: 100%;
+  }
+
+  .input-container input[type="text"],
+  .input-container input[type="email"],
+  .input-container input[type="password"] {
+    font-size: 16px;
+    width: 100%;
+    color: #3C5965;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 3px 0;
+    background-color: transparent;
+    outline: none;
+  }
+
+  input.form-field {
+    font-weight: 500;
+  }
+
+  .input-container input[type="text"]:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+    font-size: 16px !important;
+}
+.input-container input[type="email"]:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+    font-size: 16px !important;
+}
+
+.input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 15px;
+    color: #ccc;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  .input-container input[type="text"]:focus ~ .label,
+  .input-container input[type="text"]:valid ~ .label,
+  .input-container input[type="email"]:focus ~ .label,
+  .input-container input[type="email"]:valid ~ .label,
+  .input-container input[type="password"]:focus ~ .label,
+  .input-container input[type="password"]:valid ~ .label {
+    top: -20px;
+    font-size: 13px;
+    color: #7C9FAD;
+  }
+
+  .input-container .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #7C9FAD;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+  }
+
+  .input-container input[type="text"]:focus ~ .underline,
+  .input-container input[type="text"]:valid ~ .underline,
+  .input-container input[type="email"]:focus ~ .underline,
+  .input-container input[type="email"]:valid ~ .underline,
+  .input-container input[type="password"]:focus ~ .underline,
+  .input-container input[type="password"]:valid ~ .underline {
+    transform: scaleX(1);
+  }
+
+/* Button */
+
 .flowhub-brand .inner-section .account-form .btn {
     width: 100%;
 }
-
-.flowhub-brand .inner-section .form-field {
-    font-size: 14px;
-    background-color: #fafbfc;
-    border: 2px solid #dfe1e6;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border-radius: 3px;
-    height: 40px;
-    -webkit-transition: background-color .2s ease-in-out 0s,border-color .2s ease-in-out 0s;
-    transition: background-color .2s ease-in-out 0s,border-color .2s ease-in-out 0s;
-}
-
-textarea, input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="username"]  {
-    background: #EDEFF0;
-    border-radius: 4px;
-    border: 1px solid #CDD2D4;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0.5em;
-    max-width: 400px;
-    width: 100%;
-}
-
-/* Button */
 
 button, input, optgroup, select, textarea {
     color: inherit;

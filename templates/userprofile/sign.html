@@ -26,27 +26,36 @@
                             </ul>
                         </div>
                     {% endif %}
+                 <div class="login-password-container"> 
                     <form id="login-form" method="post" action="{% url 'sign' %}">
                         <div class="login-password-container-email">
                             <div class="email-password">
                                 {% csrf_token %}
-                                <div class="email-login">
-                                    <label for="{{ form.email.id_for_label }}">Email:</label>
+                                <div class="input-container">
+
                                     {{ form.email }}
+                                    <label for="{{ form.email.id_for_label }}" class="label label_email">Email:</label>
+                                    <div class="underline"></div>
                                 </div>
-                                <div class="email-login">
-                                    <label for="{{ form.username.id_for_label }}">Username:</label>
+                                <div class="input-container">
+
                                     {{ form.username }}
+                                    <label for="{{ form.username.id_for_label }}" class="label label_email">Username:</label>
+                                    <div class="underline"></div>
                                 </div>
-                                <div class="password-login">
-                                    <label for="{{ form.password1.id_for_label }}">Password:</label>
+                                <div class="input-container">
+
                                     {{ form.password1 }}
+                                    <label for="{{ form.password.id_for_label }}" class="label">Password:</label>
+                                    <div class="underline"></div>
                                 </div>
-                                <div class="password-login">
-                                    <label for="{{ form.password2.id_for_label }}">Confirm Password:</label>
-                                    {{ form.password2 }}
+                                <div class="input-container">
+
+                                    {{ form.password1 }}
+                                    <label for="{{ form.password2.id_for_label }}" class="label">Confirm Password:</label>
+                                    <div class="underline"></div>
                                 </div>
-                                <button class="py-4 px-8 bg-teal-600 text-white rounded-xl button account-button button-blue btn btn-success" id="login" type="submit">Submit</button>
+                                <button class="py-4 px-8 bg-teal-600 text-white rounded-xl button account-button button-blue btn btn-success" id="login" type="submit">Continue</button>
                             </div>
                         </div>
                     </form>
