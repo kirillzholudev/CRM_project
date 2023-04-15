@@ -20,19 +20,21 @@
                 <div class="account-form">
                     <h1>Log in to Flowhub</h1>
                     <div class="login-password-container">
-                        <form id="login-form" method="post">
+                        <form id="login-form" method="post" action="">
                             <div class="login-password-container-email">
-                                {% csrf_token %}
                                 <div class="email-password">
-                                    <div class="email-login">
-                                        {{ form.username }}
-{#                                        <input type="text" name="user" id="id_username" class="form-field" autocorrect="off" spellcheck="off" autocapitalize="off" autofocus="autofocus" placeholder="Enter email" value autocomplete="username" inputmode="email" required>#}
+                                    {% csrf_token %}
+                                    <div class="input-container">
+                                        <input type="text" name="username" id="id_username" class="form-field" autocorrect="off" spellcheck="off" autocapitalize="off" value autocomplete="username" inputmode="email" required>
+                                          <label for="id_username" class="label label_email">Enter email</label>
+                                          <div class="underline"></div>
                                     </div>
-                                    <div class="password-login">
-                                        {{ form.password }}
-{#                                        <input type="password" name="password" id="id_password" class="form-field" placeholder="Password" autocomplete="current-password" required>#}
+                                    <div class="input-container">
+                                        <input type="password" name="password" id="id_password" class="form-field" autocomplete="password" required>
+                                          <label for="id_password" class="label">Password</label>
+                                          <div class="underline"></div>
                                     </div>
-                                    <input id="login" type="submit" class="py-4 px-8 bg-teal-600 text-white rounded-xl button account-button button-blue btn btn-success" value="Continue">
+                                    <button class="py-4 px-8 bg-teal-600 text-white rounded-xl button account-button button-blue btn btn-success" id="login" type="submit">Continue</button>
                                 </div>
                             </div>
                         </form>
@@ -44,12 +46,10 @@
 
 {#                                Обязательно для гугла метод пост в форме и кнопка button!!!!#}
 
-
-                                <form method="POST" action="{% provider_login_url 'google' %}?next=/" class="google-button oauth-button">
+                                <form method="POST" action="{% provider_login_url 'google' %}?next=/" class="form-google">
                                     {% csrf_token %}
-
-                                    <button type="submit" class="google-button oauth-button">Continue with Google</button>
-
+                                    <!-- <span id="google-icon" class="icon"></span> -->
+                                    <button type="submit" class="google-button oauth-button"><span id="google-icon" class="icon"></span>Continue with Google</button>
 
                                 </form>
                                 <a id="appleButton" class="apple-button oauth-button" href>
