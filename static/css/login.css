@@ -41,6 +41,11 @@ body {
     margin: 0;
 }
 
+.logo_box {
+    width: 210px;
+    margin: auto;
+}
+
 .flowhub-brand .flowhub-main-logo {
     display: block;
     height: 100px;
@@ -148,7 +153,18 @@ h1 {
     -webkit-box-shadow: 0 0 0 30px #fff inset !important;
     font-size: 16px !important;
 }
+
+  .input-container input[type="text"]:-ms-autofill {
+    -ms-box-shadow: 0 0 0 30px #fff inset !important;
+    font-size: 16px !important;
+    color: #3C5965 !important;
+}
   
+  .input-container input[type="text"]:-moz-autofill {
+    -moz-box-shadow: 0 0 0 30px #fff inset !important;
+    font-size: 16px !important;
+    color: #3C5965 !important;
+  }
   .input-container .label {
     position: absolute;
     top: 0;
@@ -301,6 +317,15 @@ button.google-button {
     width: 18px;
     height: 18px;
     vertical-align: middle;
+}
+
+.flowhub-brand .inner-section .account-form .form-google .oauth-button span.icon {
+    display: inline-block;
+    border-radius: 1px;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    padding-right: 3px;
 }
 
 .flowhub-brand .inner-section .account-form .form-google .oauth-button span.icon {

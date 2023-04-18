@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +11,7 @@
 <body class="flowhub-brand" data-analystics-screen="loginChoiceScreenV" data-analystics-marketing-event="true">
 
     <div>
-        <a href="/"><img alt="Flowhub" class="flowhub-main-logo" src="/static/img/Logo union.svg"></a>
+        <div class="logo_box"><a href="/"><img alt="Flowhub" class="flowhub-main-logo" src="/static/img/Logo union.svg"></a></div>
         <section class="inner-section">
             <div class="section-wrapper">
                 <div class="account-form">
@@ -23,41 +20,36 @@
                         <form id="login-form" method="post" action="">
                             <div class="login-password-container-email">
                                 <div class="email-password">
-                                    {% csrf_token %}
+                                  {% csrf_token %}
                                     <div class="input-container">
                                         <input type="text" name="username" id="id_username" class="form-field" autocorrect="off" spellcheck="off" autocapitalize="off" value autocomplete="username" inputmode="email" required>
-                                          <label for="id_username" class="label label_email">Enter email</label>
-                                          <div class="underline"></div>
+                                        <label for="id_username" class="label label_email">Enter email</label>
+                                        <div class="underline"></div>
                                     </div>
                                     <div class="input-container">
                                         <input type="password" name="password" id="id_password" class="form-field" autocomplete="password" required>
-                                          <label for="id_password" class="label">Password</label>
-                                          <div class="underline"></div>
+                                        <label for="id_password" class="label">Password</label>
+                                        <div class="underline"></div>
                                     </div>
                                     <button class="py-4 px-8 bg-teal-600 text-white rounded-xl button account-button button-blue btn btn-success" id="login" type="submit">Continue</button>
                                 </div>
                             </div>
                         </form>
-                        <div class="login-methods hide-when-two-factor">
-                            <div class="login-oauth-container">
+                    <div class="login-methods hide-when-two-factor">
+                        <div class="login-oauth-container">
+                            <div class="login-method-separator">OR</div>
+                              {% load socialaccount %}
 
-                                <div class="login-method-separator">OR</div>
-                                {% load socialaccount %}
-
-{#                                Обязательно для гугла метод пост в форме и кнопка button!!!!#}
-
-                                <form method="POST" action="{% provider_login_url 'google' %}?next=/" class="form-google">
-                                    {% csrf_token %}
-                                    <!-- <span id="google-icon" class="icon"></span> -->
-                                    <button type="submit" class="google-button oauth-button"><span id="google-icon" class="icon"></span>Continue with Google</button>
-
-                                </form>
-                                <a id="appleButton" class="apple-button oauth-button" href>
-                                    <span id="apple-icon" class="icon"></span>
-                                    <span class="label" data-analystic-button="loginWithAppleButton">Continue with Apple</span>
-                                </a>
-                            </div>
+                              <form method="POST" action="{% provider_login_url 'google' %}?next=/" class="form-google">
+                                 {% csrf_token %}
+                                  <button type="submit" class="google-button oauth-button"><span id="google-icon" class="icon"></span><span class="label" data-analystics-button="loginWithGmailButton">Continue with Google</span></button>
+                              </form>
+                              <a id="appleButton" class="apple-button oauth-button" href>
+                                  <span id="apple-icon" class="icon"></span>
+                                  <span class="label" data-analystic-button="loginWithAppleButton">Continue with Apple</span>
+                              </a>
                         </div>
+                    </div>
                     </div>
                     <hr class="bottom-form-separator">
                     <ul class="bottom-form-link">
@@ -75,8 +67,6 @@
     </div>
     <footer class="global-footer" data-track-group="Footer"></footer>
     <div class="background"></div>
-
-    <!-- <script src="/static/js/login.js"></script> -->
 
 </body>
 </html>

@@ -12,7 +12,7 @@
 <body class="flowhub-brand" data-analystics-screen="loginChoiceScreenV" data-analystics-marketing-event="true">
 
     <div>
-        <a href="/"><img alt="Flowhub" class="flowhub-main-logo" src="/static/img/Logo union.svg"></a>
+        <div class="logo_box"><a href="/"><img alt="Flowhub" class="flowhub-main-logo" src="/static/img/Logo union.svg"></a></div>
         <section class="inner-section">
             <div class="section-wrapper">
                 <div class="account-form">
@@ -67,9 +67,9 @@
 {#                                Обязательно для гугла метод пост в форме и кнопка button!!!!#}
 
 
-                                <form method="POST" action="{% provider_login_url 'google' %}?next=/" class="google-button oauth-button">
+                                <form method="POST" action="{% provider_login_url 'google' %}?next=/" class="form-google">
                                     {% csrf_token %}
-                                    <button type="submit" class="google-button oauth-button">Continue with Google</button>
+                                    <button type="submit" class="google-button oauth-button"><span id="google-icon" class="icon"></span><span class="label" data-analystics-button="loginWithGmailButton">Continue with Google</span></button>
                                 </form>
 
 {#                            <a id="googleButton" class="google-button oauth-button" href>#}

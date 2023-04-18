@@ -41,6 +41,11 @@ body {
     margin: 0;
 }
 
+.logo_box {
+    width: 210px;
+    margin: auto;
+}
+
 .flowhub-brand .flowhub-main-logo {
     display: block;
     height: 100px;
@@ -235,6 +240,7 @@ button, html input[type="button"], input[type="submit"] {
     position: relative;
     text-decoration: none;
     border: 0px;
+    transition: 0.1s all ease-in-out;
 }
 
 .button-blue {
@@ -282,6 +288,18 @@ input {
     transition: background-color .2s ease-in-out 0s,border-color .2s ease-in-out 0s;
 }
 
+form.form-google {
+    vertical-align: middle;
+    font-size: 14px;
+    /* color: #505f79; */
+    font-family: inherit;
+    font-weight: bold;
+}
+
+button.google-button {
+    color: #505f79 !important;
+}
+
 .flowhub-brand .inner-section .account-form #google-icon {
     background: url('https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/8215f6659adc202403198fef903a447e/sign-in-with-google.svg') 0 50% no-repeat;
 }
@@ -292,6 +310,15 @@ input {
     width: 18px;
     height: 18px;
     vertical-align: middle;
+}
+
+.flowhub-brand .inner-section .account-form .form-google .oauth-button span.icon {
+    display: inline-block;
+    border-radius: 1px;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    padding-right: 3px;
 }
 
 .flowhub-brand .inner-section .account-form .oauth-button span.label {
