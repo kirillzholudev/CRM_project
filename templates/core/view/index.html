@@ -5,27 +5,28 @@
 {% block content %}
 
     <section class="frontsection">
-       <div class="section_container">
-          <div class="baseUpfront">
-             <div class="leftUp">
-              <div class="leftmaintext">
-                <div>
-                    <h1><mark>Our CRM</mark> brings all your tasks, teammates, and tools together</h1>
-                    <p>Keep everything in the same place—even if your team isn’t.</p>
-                </div>
-              </div>
-             </div>
-             <div class="rightUp">
-             </div>
-          </div>
-       </div>
-       </section>
+      <div class="grid_container">
+         <div class="grid_row-container">
+            <div class="left-container">
+                     <div class="TextBlock">
+                        <h1>Welcome to <mark>FlowHub</mark>,<br>the ultimate solution for managing<br>your business tasks and workflows.</h1>
+                        <p>You can streamline your processes, collaborate with your<br>team, and increase productivity like never before.</p>
+                      </div>
+                      <div class="Spacerline"></div>
+                      <form id="login-form" method="post" action="{% url 'sign' %}" class="EmailSign_Form">
+                        <div class="login-password-container-email">
+                           <div class="email-password">
+                               {% csrf_token %}
+                               <div class="input-container">
 
-       <div class="container">
-         <div class="item"></div>
-         <div class="item"></div>
-         <div class="item"></div>
-         <div class="item"></div>
-         <div class="item"></div>
-     </div>
+                                   <input type="email" aria-label="Email" name="email" placeholder="Email" class="label input">
+                                   <button class="py-4 px-8 bg-teal-600 text-white rounded-xl button account-button button-green btn btn-success" id="submit" type="submit">Sign up for free</button>
+                               </div>
+                           </div>
+                        </div>    
+                      </form>
+            </div>
+         </div>         
+      </div>
+    </section>
 {% endblock %}

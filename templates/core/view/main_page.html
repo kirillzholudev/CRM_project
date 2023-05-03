@@ -12,49 +12,53 @@
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
 </head>
 <body>
-    <header class="BigNavStyles">
+  <div class="background-main">
+    <header class="header BigNavStyles">
       <div class="global-navigation w-nav"> 
         <div class="containerN NavBar w-NavBar">
-         <a class="logo-wrapper w-nav-logo w--current" href="/">
-            <img class="logo" src="/static/img/semicircle.png" width="50px">CrmSystem
-          </a>
+          <div class="logo">
+            <a class="logo-wrapper w-nav-logo w--current" href="/">
+              <img src="/static/img/Component1.svg" class="img img--brand" alt="FlowHub" style="width:170px">
+            </a>
+          </div>
          <nav role="navigation" class="nav-menu w-naw-menu">
           <div class="buttons_in">
             <div class="nav-link-dropdown w-dropdown" style="max-width: 1200px;">
               <div class="nav-dropdown w-dropdown-toggle" role="button" tabindex="0">
                 <div class="nav-dropdown-text">Features</div>
-                <img src="/static/img/scroll-down.png" width="10px" class="down-arrow-icon" alt="Down arrow icon">
+                <img src="/static/img/Vector 1.svg" width="10px" class="down-arrow-icon" alt="Down arrow icon">
               </div>
             </div>
             <div class="nav-link-dropdown w-dropdown" style="max-width: 1200px;">  
               <div class="nav-dropdown w-dropdown-toggle" role="button" tabindex="0">
                 <div class="nav-dropdown-text">Solution</div>
-                <img src="/static/img/scroll-down.png" width="10px" class="down-arrow-icon" alt="Down arrow icon">
+                <img src="/static/img/Vector 1.svg" width="10px" class="down-arrow-icon" alt="Down arrow icon">
               </div>
             </div>  
             <div class="nav-link-dropdown w-dropdown" style="max-width: 1200px;">
               <div class="nav-dropdown w-dropdown-toggle" role="button" tabindex="0">
                 <div class="nav-dropdown-text">Resources</div>
-                <img src="/static/img/scroll-down.png" width="10px" class="down-arrow-icon" alt="Down arrow icon">
+                <img src="/static/img/Vector 1.svg" width="10px" class="down-arrow-icon" alt="Down arrow icon">
               </div>
             </div>  
-            <a href="/pricing" class="nav-link w-nav-link" style="max-width: 1200px;">Pricing</a>
+            <a href="" class="nav-link w-nav-link" style="max-width: 1200px;">About us</a>
           </div>
              <div class="buttons_in_group">
+              <div class="line-sign"></div>
                  {% if request.user.is_authenticated %}
                      <a class="login" href="{% url 'dashboard' %}">Dashboard</a>
                      <a class="login" href="{% url 'leads_list' %}">Leads</a>
                      <a class="Sign in" href="{% url 'logout' %}">Log out</a>
                  {% else %}
-                     <a class="nav-link w-nav-link" href="{% url 'login' %}" style="max-width: 1200px;">Log in</a>
-                     <a class="Sign nav-link w-nav-link" href="{% url 'sign' %}" style="max-width: 1200px;">Sign in</a>
+                     <a class="sign-in nav-link w-nav-link" href="{% url 'login' %}" style="max-width: 1200px;">Sign in</a>
+                     <a class="Sign nav-link w-nav-link" href="{% url 'sign' %}" style="max-width: 1200px;">Free Trial</a>
                  {% endif %}
              </div>
          </nav>   
         </div>
       </div>
     </header>
-
+  </div>
     {% if messages %}
         <div class="py-6 px-6">
             {% for message in messages %}
@@ -70,9 +74,6 @@
 
     {% block content %}
     {% endblock %}
-
-
-    <script src="/static/js/logo.js"></script>
 </body>
 </html>
 

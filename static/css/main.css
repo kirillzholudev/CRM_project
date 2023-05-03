@@ -4,36 +4,56 @@
     padding: 0;
 }
   
-  /* html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  height: 100%
-} */
+@font-face {
+  font-family: "Nunito";
+  src: url("/static/Fonts/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/static/Fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Nunito Light";
+  src: url("/static/Fonts/NunitoSans_10pt-Light.ttf");
+}
 
   body {
     margin: 0;
     min-height: 100%;
     min-width: 320px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Nunito", sans-serif;
     text-rendering: optimizeLegibility;
     font-size: 16px;
     /* color: hsl(125, 25%, 81%); */
-    background-color: #0D1B1E;
+    background-color: #fff;
     line-height: 20px;
 }
-  
-  .global-navigation {
-  height: 48px;
-  background-color: #324d5c;
+
+body {
+  background-image: url("/static/img/background.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
 }
 
-  .BigNavStyles {
+/* Header */
+
+.header {
+    z-index: 9;
+    width: 100%;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 9;
-    width: 100%;
+    right: 0;
+    left: 0;
+    transition: all .2s;
+}
+
+  .global-navigation {
+  height: 55px;
+  background-color: hsla(109, 22%, 15%, 0.301);
 }
   
   article, aside, details, 
@@ -42,36 +62,32 @@
     display: block;
 }
 
-  * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-  .NavBar {
-    display: flex;
+  .containerN.NavBar {
     height: 100%;
-    max-width: 1200px;
+    max-width: 100%;
     margin-right: auto;
     margin-left: auto;
     background-image: none;
+    display: flex;
 }
 
   .containerN {
     width: 100%;
-    max-width: 1200px;
-    padding-right: 15px;
+    max-width: 100%;
     padding-bottom: 0;
-    padding-left: 15px;
+    padding-left: 55px;
     align-items: center;
+    display: block;
 }
 
-  .w-NavBar {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 940px;
+  .logo {
+    line-height: 47px;
+    height: 55px;
 }
- 
+
   .logo-wrapper.w--current {
+    display: inline-block;
+    vertical-align: middle;
     margin-right: 15px;
 }
 
@@ -98,8 +114,7 @@
 }
 
   .nav-link:hover {
-  background-color: #293f4b;
-  opacity: 1;
+  background-color: #696C6C;
 }
 
   .logo {
@@ -128,23 +143,23 @@
   .buttons_in {
     display: flex;
     align-items: center;
-    margin-left: 40px;
+    margin-left: 75px;
+    /* transition: all .3s ease-in-out; */
 }
 
   .nav-link-dropdown {
     position: relative;
     display: block;
-    height: 48px;
+    height: 55px;
     padding: 0;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    opacity: 1;
     transform: translate(0,0);
-    transition: background-color .2s ease-in-out;
-    font-family: 'Montserrat Quaderno',sans-serif;
+    transition: all .2s ease-in-out;
+    font-family: "Nunito", sans-serif;
     color: #fff;
-    font-size: .875rem;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -159,7 +174,7 @@
 
   .nav-dropdown {
     display: flex;
-    height: 48px;
+    height: 55px;
     padding: 0 15px;
     justify-content: flex-start;
     align-items: center;
@@ -197,16 +212,16 @@
 }
 
   .nav-link-dropdown:hover {
-    background-color: #293f4b;
-    opacity: 1;
-    transform: none;
+    background-color: #696C6C;
+    /* opacity: 50%; */
+    color: #fff;
 }
   .nav-dropdown-text {
     border: none;
     background: none;
-    font-size: 16px;
-    font-weight: 500;
-    color: #e8e7ea;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
   }
@@ -214,88 +229,224 @@
   .nav-link {
     position: relative;
     display: flex;
-    height: 48px;
+    height: 55px;
     padding: 0 15px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    opacity: 1;
     transform: translate(0,0);
-    transition: background-color .2s ease-in-out;
-    font-family: 'Montserrat Quaderno',sans-serif;
+    transition: all .2s ease-in-out;
+    font-family: "Nunito", sans-serif;
     color: #fff;
-    font-size: .875rem;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
 }
 
   .buttons_in_group {
     display: flex;
+    justify-content: right;
+    transition: all .3s ease;
   }
 
   .buttons_in_group a:hover {
-    color: #0D1B1E;
+    color: #282828;
     background-color: #d4ded5;
   } 
+
+  div.line-sign {
+    position: absolute;
+    width: 30px;
+    height: 0px;
+    right: 192px; 
+    top: 26px;
+    mix-blend-mode: exclusion;
+    border: 1px solid #676767;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    transform: rotate(90deg);
+    opacity: 80%;
+    border-radius: 5px;
+  }
   
   .Sign {
-    background-color: hsl(125, 25%, 81%);
-    color: #000000;
+    background-color: #676767;
+    color: #fff;
+    text-decoration: none;
   } 
+
+  .sign-in {
+    width: 100px;
+  }
   
   /* page */
 
-  .leftUp {
+  /* .leftUp {
     text-align: left;
     display: block;
     flex: 0 0 auto;
     width: 40%;
     margin-bottom: 0px;
     padding-bottom: 8rem;
+    position: relative;
   }
   
   .leftUp {
-    padding: 8em 1rem 1rem;
+    padding: 18em 6rem 1rem;
     position: relative;
     scroll-margin-top: 72px;
     margin-top: 0px;
   }
+
+  .left-container {
+    position: relative;
+  }
+  
+
+  .left-container::before {
+    content: "";
+    position: absolute;
+    width: 620px;
+    height: 245px;
+    left: -29px;
+    top: -1px;
+    background: #D9D9D9;
+    border-radius: 15px;
+    opacity: 20%;
+    z-index: 100;
+  } */
+
+  @media (min-width: 992px) {
+  .frontsection {
+    overflow-x: hidden;
+  }
+}
+
+.frontsection {
+  scroll-margin-top: 72px;
+}
+
+@media (min-width: 1200px) {
+.grid_container {
+    max-width: 1140px;
+}
+}
+
+  .grid_container {
+    margin-left: 0;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+}
+
+.grid_row-container {
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+}
+
+@media (min-width: 992px) {
+  .left-container {
+    text-align: left;
+    display: block;
+    flex: 0 0 auto;
+    margin-bottom: 0px;
+    padding-bottom: 8rem;
+  }
+  }
+
+.left-container {
+    padding: 8rem 6rem 1rem;
+    position: relative;
+    scroll-margin-top: 72px;
+    margin-top: 179px;
+}
+
   
   h1 {
-    font-weight: 500;
-    font-size: 3rem;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 35px;
     line-height: 1.25;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
     margin-top: 0px;
     color: #fff;
+    width: 558px;
+    /* z-index: 100; */
   }
   
   p {
+    font-family: "Nunito Light", sans-serif;
     color: #fff;
   }
+  
+  
+  .Spacerline {
+    height: 5rem;
+  }
 
-  .item {
-          width: 80px;
-          height: 80px;
-          background-color: hsl(125, 25%, 81%);
-          transition: .3s;
-          border-radius: 25px;
-          margin-left: 15px;
-          margin-right: 0px;
-      }
+  mark {
+    background: rgba(199, 148, 8, 0.83);
+    color: #fff;
+    border-radius: 1px;
+  }
 
-      .container {
-          display: flex;
-          justify-content: left;
-          align-items: center;
-          margin: 1em;
-      }
+  input {
+    margin: 0px;
+    font-family: inherit;
+  }
 
-      .container:hover > :not(:hover) {
-          opacity: .4;
-      }
+  .input-container input[type="email"] {
+    font-size: 18px;
+    width: 65%;
+    color: #3C5965;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #e1e1e1;
+    opacity: 85%;
+    outline: none;
+  }
 
-      .item:hover {
-          box-shadow: 5px 5px 56px -14px #25b384;
-          /* transform: rotate(45deg); */
-          transform: scale(1.2);
-      }
+  .input-container .label {
+    height: 40px;
+    padding-left: 10px;
+  }
+
+  .input-container input[type="email"]:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #e1e1e1 inset !important;
+    font-size: 18px !important;
+}
+
+  .input-container .button-green {
+    width: 150px;
+    cursor: pointer;
+    float: right;
+    height: 40px;
+  }
+
+
+  .btn-success {
+    font-family: "Nunito Light", sans-serif;
+    background: rgba(49, 63, 50, 0.8);
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 0 hsl(0,0%,30%);
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 0.6em 1.3em;
+    position: relative;
+    text-decoration: none;
+    border: 0px;
+    transition: 0.1s all ease-in-out;
+}
+
+   .btn-success:hover {
+    background-color: rgba(66, 85, 68, 0.8);
+    transition: all .3s ease-out;
+   }
