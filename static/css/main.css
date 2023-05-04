@@ -36,6 +36,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: top;
+  overflow-y: hidden;
 }
 
 /* Header */
@@ -44,7 +45,7 @@ body {
     z-index: 9;
     width: 100%;
     position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
@@ -331,62 +332,49 @@ body {
 }
 } */
 
-.grid_container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-@media (max-width: 1920px) and (min-width: 1280px) {
-  .TextBlock {
-    width: 100%;
-    max-width: none;
-  }
-}
-section {
-  max-width: 1920px;
-  min-width: 1280px;
-}
-
-
-
-  .grid_container {
-    margin-left: 0;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: 100%;
+.grid_row-container {
+  padding: 8rem 6rem 1rem;
+  position: relative;
+  scroll-margin-top: 72px;
+  margin-top: 4px;
 }
 
 .grid_row-container {
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: start;
-    justify-content: flex-start;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  margin-left: 5vw;
+  padding: 0;
+  text-align: left;
+}
+
+   .frontsection {
     display: flex;
-    flex-wrap: wrap;
-    margin-left: -1rem;
-}
-
-@media (min-width: 992px) {
-  .left-container {
-    text-align: left;
-    display: block;
-    flex: 0 0 auto;
-    margin-bottom: 0px;
-    padding-bottom: 8rem;
+    align-items: center;
+    justify-content: flex-start;
+    height: 112vh;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
   }
-  }
-
-.left-container {
-    padding: 8rem 6rem 1rem;
-    position: relative;
-    scroll-margin-top: 72px;
-    margin-top: 4px;
-}
-
   
+  .left-container {
+    max-width: 550px;
+  }
+
+  .left-container::before {
+    content: "";
+    position: absolute;
+    width: 590px;
+    height: 240px;;
+    left: -25px;
+    top: -20px;
+    background: #D9D9D9;
+    border-radius: 15px;
+    opacity: 20%;
+    z-index: 100;
+  }
+
   h1 {
     font-family: "Roboto", sans-serif;
     font-style: normal;
@@ -397,7 +385,6 @@ section {
     margin-top: 0px;
     color: #fff;
     width: 558px;
-    /* z-index: 100; */
   }
   
   p {
@@ -427,7 +414,7 @@ section {
     color: #3C5965;
     border: none;
     border-bottom: 2px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
     background-color: #e1e1e1;
     opacity: 85%;
     outline: none;
@@ -450,12 +437,15 @@ section {
     height: 40px;
   }
 
+  ::placeholder {
+    color: rgba(49, 63, 50, 0.8);
+  }
 
   .btn-success {
     font-family: "Nunito Light", sans-serif;
     background: rgba(49, 63, 50, 0.8);
     color: #ffffff;
-    border-radius: 8px;
+    border-radius: 6px;
     box-shadow: 0 1px 0 hsl(0,0%,30%);
     display: inline-block;
     margin-bottom: 0;
