@@ -325,11 +325,31 @@ body {
   scroll-margin-top: 72px;
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
 .grid_container {
     max-width: 1140px;
 }
+} */
+
+.grid_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+@media (max-width: 1920px) and (min-width: 1280px) {
+  .TextBlock {
+    width: 100%;
+    max-width: none;
+  }
+}
+section {
+  max-width: 1920px;
+  min-width: 1280px;
+}
+
+
 
   .grid_container {
     margin-left: 0;
@@ -363,7 +383,7 @@ body {
     padding: 8rem 6rem 1rem;
     position: relative;
     scroll-margin-top: 72px;
-    margin-top: 179px;
+    margin-top: 4px;
 }
 
   
@@ -403,7 +423,7 @@ body {
 
   .input-container input[type="email"] {
     font-size: 18px;
-    width: 65%;
+    width: 70%;
     color: #3C5965;
     border: none;
     border-bottom: 2px solid #ccc;
