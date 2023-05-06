@@ -26,7 +26,6 @@
     font-family: "Nunito", sans-serif;
     text-rendering: optimizeLegibility;
     font-size: 16px;
-    /* color: hsl(125, 25%, 81%); */
     background-color: #fff;
     line-height: 20px;
 }
@@ -105,11 +104,6 @@ body {
     color: #e8e7ea;
 }
 
-  /* .buttons_in_group {
-  background-color: transparent;
-  text-decoration: none;
-} */
-
   a:active,a:hover {
   outline: 0;
 }
@@ -144,7 +138,6 @@ body {
     display: flex;
     align-items: center;
     margin-left: 75px;
-    /* transition: all .3s ease-in-out; */
 }
 
   .nav-link-dropdown {
@@ -184,7 +177,6 @@ body {
   .w-dropdown-toggle {
     -webkit-user-select: none;
     user-select: none;
-    /* cursor: pointer; */
 }
 
   .w-dropdown-btn, .w-dropdown-link {
@@ -213,7 +205,6 @@ body {
 
   .nav-link-dropdown:hover {
     background-color: #696C6C;
-    /* opacity: 50%; */
     color: #fff;
     transition: all .3s ease-in-out;
 }
@@ -308,6 +299,7 @@ body {
     font-size: 18px;
     font-weight: 400;
     text-decoration: none;
+    user-select: none;
 }
 
   .buttons_in_group {
@@ -343,6 +335,13 @@ body {
 
   .sign-in {
     width: 100px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    div.line-sign {
+      width: 0px;
+      right: 0px;
+    }
   }
   
   /* page */
