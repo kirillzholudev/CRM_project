@@ -184,7 +184,7 @@ body {
   .w-dropdown-toggle {
     -webkit-user-select: none;
     user-select: none;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
   .w-dropdown-btn, .w-dropdown-link {
@@ -232,22 +232,56 @@ body {
     visibility: hidden;
     z-index: 1;
     top: 0;
-    width: 500px;
+    left: 15px;
+    width: 782px;
+    height: 275px;
     margin-top: 55px;
-    background-color: #fff;
+    margin-left: -330px;
+    background-color: #ffffffe0;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     transition: opacity 0.3s ease-in-out;
   }
+
+  .solution-drop {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    top: 0;
+    left: -103px;
+    width: 782px;
+    height: 275px;
+    margin-top: 55px;
+    background-color: #ffffffe0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .resources-drop {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    top: 0;
+    left: -218px;
+    width: 782px;
+    height: 275px;
+    margin-top: 55px;
+    background-color: #ffffffe0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .nav-dropdown-item {
+    margin: 20px;
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+}
   
   .nav-dropdown:hover .nav-dropdown-content {
     opacity: 1;
     visibility: visible;
-  }
-
-  .nav-dropdown-item {
-    background-color: #fff;
-    padding: 10px;
-    margin-left: -330px;
   }
   
   .nav-dropdown-link {
@@ -458,3 +492,70 @@ body {
     background-color: rgba(66, 85, 68, 0.8);
     transition: all .3s ease-out;
    }
+
+   .down-arr {
+    position: absolute;
+    bottom: 50px;
+    text-align: center;
+    display: inline-block;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    z-index: 2;
+}
+
+.down-arr a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+
+@media only screen and (max-width: 1280px) {
+  .down-arr .text-20 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .down-arr .text-20 {
+    font-size: 0;
+  }
+}
+
+.text-20 {
+  line-height: 1.3;
+  font-size: 1.25rem;
+}
+
+.down-arr a p {
+  padding-bottom: 10px;
+  margin-bottom: 0;
+}
+
+.down-arr a::after {
+  content: "";
+  background: url(/static/img/Vector\ 1.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 50%;
+  width: 27px;
+  height: 20px;
+  margin-left: -35px;
+  text-align: center;
+  background-size: 23px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
